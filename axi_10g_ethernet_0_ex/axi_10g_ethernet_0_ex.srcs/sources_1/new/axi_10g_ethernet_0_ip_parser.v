@@ -76,10 +76,6 @@ reg [47:0] des_mac;
 reg [31:0] des_ip;
 reg [31:0] des_ip_icmp;
 
-reg [47:0] des_mac_reversed;
-reg [31:0] des_ip_reversed;
-reg [31:0] des_ip_icmp_reversed;
-
 reg [7:0] icmp_pro;
 
 /*reg [15:0] optype;
@@ -87,17 +83,18 @@ reg [63:0] arp_head;
 reg [47:0] arp_src_mac;
 reg [31:0] arp_src_ip;*/
 
-always @(des_ip) begin
-    des_ip_reversed = reverse(des_ip);
-end
-
-always @(des_mac) begin
-    des_mac_reversed = reverse(des_mac);
-end
-
-always @(des_ip_icmp) begin
-    des_ip_icmp_reversed = reverse(des_ip_icmp);
-end
+function automatic reg [N-1:0] swap_endian;
+    input reg [N-1:0] value;
+    integer i;
+    reg [N-1:0] reversed_value;
+    begin
+        reversed_value = 'b0;
+        for (i = 0; i < N; i = i + 8) begin
+            reversed_value[i +: 8] = value[N - i - 1 -: 8];
+        end
+        swap_endian = reversed_value;
+    end
+endfunction
 
 always @(posedge aclk) begin
     if (areset) begin
@@ -172,10 +169,10 @@ always @(posedge aclk) begin
         icmp_rx_done <= 0;
     end
     else begin
-        if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0608 & des_ip_reversed == BOARD_IP & (des_mac_reversed == BOARD_MAC | des_mac_reversed == 48'hff_ff_ff_ff_ff_ff)) begin
+        if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0608 & swap_endian(des_ip) == BOARD_IP & (swap_endian(des_mac) == BOARD_MAC | swap_endian(des_mac) == 48'hff_ff_ff_ff_ff_ff)) begin
             arp_rx_done <= 1;
         end
-        else if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0008 & icmp_pro == 8'h01 & des_ip_icmp_reversed == BOARD_IP) begin
+        else if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0008 & icmp_pro == 8'h01 & swap_endian(des_ip_icmp) == BOARD_IP) begin
             icmp_rx_done <= 1;
         end
         else begin
