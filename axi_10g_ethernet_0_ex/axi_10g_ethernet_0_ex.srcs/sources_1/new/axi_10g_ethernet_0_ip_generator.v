@@ -34,7 +34,7 @@ module axi_10g_ethernet_0_ip_generator #(
    input       [31:0]      arp_dec_ip,
    input                   arp_rx_done,
 
-   input       [15:0]      icmp_total_length,
+   input       [63:0]      icmp_data[3:0],
 
    output reg  [63:0]     tx_axis_tdata,
    output reg  [7:0]      tx_axis_tkeep,
@@ -52,7 +52,8 @@ localparam IDLE = 0,
            DATA4 = 7,
            DATA5 = 8,
            DATA6 = 9,
-           CAL_HEADER_CHECKSUM = 10;
+           CAL_HEADER_CHECKSUM = 10,
+           CAL_ICMP_HEADER_CHECKSUM = 11;
 
 localparam IP_VERSION = 4'b0004,
            IP_HEADER_LEGTH = 4'b0005,
@@ -63,8 +64,11 @@ localparam IP_VERSION = 4'b0004,
 reg [15:0] IP_Identification;
 
 reg [15:0] ip_head [9:0];
-reg [15:0] icmp_total_length_reg;
 reg [31:0] ip_head_sum;
+
+reg [15:0] icmp_head[3:0];
+reg [63:0] icmp_data_reg[3:0];
+reg [15:0] icmp_head_sum;
 
 
 reg [3:0] state;
@@ -108,10 +112,11 @@ always @(posedge aclk) begin
     else if (icmp_rx_done) begin
         icmp_dec_mac_reg <= arp_dec_mac;
         icmp_dec_ip_reg <= arp_dec_ip;
-        icmp_total_length_reg <= icmp_total_length;
+        icmp_data_reg <= icmp_data;
         state <= START_ICMP;
         icmp_cnt <= 0;
         ip_head_sum <= 0;
+        icmp_head_sum <= 0;
     end
 end
 
@@ -218,6 +223,12 @@ always @(posedge aclk) begin
                 end
 
                 ip_head[5] <= ip_head_sum[15:0];
+
+                icmp_head[0] <= 16'b0;
+                icmp_head[1] <= 16'b0;
+                icmp_head[2] <= 16'h00_01;
+                icmp_head[3] <= icmp_head[3] + 1;
+
             end
         endcase
     end
