@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ps / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -53,7 +53,8 @@ localparam IDLE = 0,
            DATA5 = 8,
            DATA6 = 9,
            CAL_HEADER_CHECKSUM = 10,
-           CAL_ICMP_HEADER_CHECKSUM = 11;
+           CAL_ICMP_HEADER_CHECKSUM = 11,
+           ICMP_TX = 12;
 
 localparam IP_VERSION = 4'b0004,
            IP_HEADER_LEGTH = 4'b0005,
@@ -68,7 +69,7 @@ reg [31:0] ip_head_sum;
 
 reg [15:0] icmp_head[3:0];
 reg [63:0] icmp_data_reg[3:0];
-reg [15:0] icmp_head_sum;
+reg [31:0] icmp_head_sum;
 
 
 reg [3:0] state;
@@ -203,32 +204,68 @@ always @(posedge aclk) begin
                 state <= CAL_HEADER_CHECKSUM;
             end
             CAL_HEADER_CHECKSUM : begin
-                ip_head_sum <= ip_head_sum + ip_head[0];
-                ip_head_sum <= ip_head_sum + ip_head[1];
-                ip_head_sum <= ip_head_sum + ip_head[2];
-                ip_head_sum <= ip_head_sum + ip_head[3];
-                ip_head_sum <= ip_head_sum + ip_head[4];
-                ip_head_sum <= ip_head_sum + ip_head[5];
-                ip_head_sum <= ip_head_sum + ip_head[6];
-                ip_head_sum <= ip_head_sum + ip_head[7];
-                ip_head_sum <= ip_head_sum + ip_head[8];
-                ip_head_sum <= ip_head_sum + ip_head[9];
+                ip_head_sum = ip_head_sum + ip_head[0];
+                ip_head_sum = ip_head_sum + ip_head[1];
+                ip_head_sum = ip_head_sum + ip_head[2];
+                ip_head_sum = ip_head_sum + ip_head[3];
+                ip_head_sum = ip_head_sum + ip_head[4];
+                ip_head_sum = ip_head_sum + ip_head[5];
+                ip_head_sum = ip_head_sum + ip_head[6];
+                ip_head_sum = ip_head_sum + ip_head[7];
+                ip_head_sum = ip_head_sum + ip_head[8];
+                ip_head_sum = ip_head_sum + ip_head[9];
 
-                ip_head_sum <= ip_head_sum[31:16] + ip_head_sum[15:0];
-                ip_head_sum <= ip_head_sum[31:16] + ip_head_sum[15:0];
-                ip_head_sum <= ip_head_sum[31:16] + ip_head_sum[15:0];
+                ip_head_sum = ip_head_sum[31:16] + ip_head_sum[15:0];
+                ip_head_sum = ip_head_sum[31:16] + ip_head_sum[15:0];
+                ip_head_sum = ip_head_sum[31:16] + ip_head_sum[15:0];
 
                 for (integer i = 0; i < 16; i = i + 1) begin
-                    ip_head_sum[i] <= 1- ip_head_sum[i];
+                    ip_head_sum[i] = 1- ip_head_sum[i];
                 end
 
-                ip_head[5] <= ip_head_sum[15:0];
+                ip_head[5] = ip_head_sum[15:0];
 
                 icmp_head[0] <= 16'b0;
                 icmp_head[1] <= 16'b0;
                 icmp_head[2] <= 16'h00_01;
                 icmp_head[3] <= icmp_head[3] + 1;
 
+                state <= CAL_ICMP_HEADER_CHECKSUM;
+            end
+            CAL_ICMP_HEADER_CHECKSUM : begin
+                icmp_head_sum = icmp_head_sum + icmp_head[0];
+                icmp_head_sum = icmp_head_sum + icmp_head[1];
+                icmp_head_sum = icmp_head_sum + icmp_head[2];
+                icmp_head_sum = icmp_head_sum + icmp_head[3];
+
+                for (integer i = 0; i < 4; i = i + 1) begin
+                    for (integer j = 0; j < 64; j = j + 16) begin
+                        icmp_head_sum = icmp_head_sum + icmp_data_reg[i][j + 15 : j];
+                    end
+                end
+                
+                icmp_head_sum = icmp_head_sum[31:16] + icmp_head_sum[15:0];
+                icmp_head_sum = icmp_head_sum[31:16] + icmp_head_sum[15:0];
+                icmp_head_sum = icmp_head_sum[31:16] + icmp_head_sum[15:0];
+
+                for (integer i = 0; i < 16; i = i + 1) begin
+                    icmp_head_sum[i] = 1 - icmp_head_sum[i];
+                end
+
+                icmp_head[1] = icmp_head_sum[15:0];
+
+                state <= ICMP_TX;
+                icmp_cnt <= 0;
+            end
+            ICMP_TX : begin
+                case (icmp_cnt)
+                    0 : begin
+                        tx_axis_tdata <= {swap_endian(icmp_head[3]), 48'b3C0000450008};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                    end
+                endcase
             end
         endcase
     end
