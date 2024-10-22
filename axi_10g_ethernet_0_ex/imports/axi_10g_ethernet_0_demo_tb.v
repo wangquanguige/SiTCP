@@ -261,12 +261,12 @@ parameter TB_MODE = "DEMO_TB";
         frame1.data[0]  = 32'h04030201;  // <---
         frame1.data[1]  = 32'h02020605;  //    |
         frame1.data[2]  = 32'h06050403;  //    |  This part of the frame is looped
-        frame1.data[3]  = 32'h55AA0081;  //    |  if FRAME_GEN_MULTIPLIER is set to
-        frame1.data[4]  = 32'hAA55AA55;  //    |  more than 1
-        frame1.data[5]  = 32'h55AA55AA;  //    |
-        frame1.data[6]  = 32'hAA55AA55;  //    |
-        frame1.data[7]  = 32'h55AA55AA;  //    |
-        frame1.data[8]  = 32'hAA55AA55;  //    |
+        frame1.data[3]  = 32'h00450008;  //    |  if FRAME_GEN_MULTIPLIER is set to
+        frame1.data[4]  = 32'h17133C00;  //    |  more than 1
+        frame1.data[5]  = 32'h01800000;  //    |
+        frame1.data[6]  = 32'h77770000;  //    |
+        frame1.data[7]  = 32'h66667777;  //    |
+        frame1.data[8]  = 32'hAA556666;  //    |
         frame1.data[9]  = 32'h55AA55AA;  //    |
         frame1.data[10] = 32'hAA55AA55;  //    |
         frame1.data[11] = 32'h55AA55AA;  //    |
@@ -942,9 +942,9 @@ parameter TB_MODE = "DEMO_TB";
 
              rx_stimulus_send_idle;
              rx_stimulus_send_frame(frame0.tobits(0));
-             //rx_stimulus_send_idle;
-             //rx_stimulus_send_idle;
-             //rx_stimulus_send_frame(frame1.tobits(0));
+             rx_stimulus_send_idle;
+             rx_stimulus_send_idle;
+             rx_stimulus_send_frame(frame1.tobits(0));
              //rx_stimulus_send_idle;
              //rx_stimulus_send_idle;
              //rx_stimulus_send_frame(frame2.tobits(0));

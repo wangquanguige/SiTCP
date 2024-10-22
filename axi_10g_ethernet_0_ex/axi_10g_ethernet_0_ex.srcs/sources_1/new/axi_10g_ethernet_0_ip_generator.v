@@ -56,8 +56,8 @@ localparam IDLE = 0,
            CAL_ICMP_HEADER_CHECKSUM = 11,
            ICMP_TX = 12;
 
-localparam IP_VERSION = 4'b0004,
-           IP_HEADER_LEGTH = 4'b0005,
+localparam IP_VERSION = 16'h0004,
+           IP_HEADER_LEGTH = 16'h0005,
            IP_TYPE_SERVICE = 8'b0,
            IP_FLAGS_OFFSET = 16'b0,
            IP_TTL_PROTOCOL = 16'h8001;
@@ -83,8 +83,8 @@ reg [47:0] icmp_dec_mac_reg;
 reg [31:0] icmp_dec_ip_reg; 
 reg [1:0]  icmp_cnt;
 
-function automatic reg [N-1:0] swap_endian;
-    input reg [N-1:0] value;
+function automatic [N-1:0] swap_endian;
+    input [N-1:0] value;
     integer i;
     reg [N-1:0] reversed_value;
     begin
@@ -260,10 +260,54 @@ always @(posedge aclk) begin
             ICMP_TX : begin
                 case (icmp_cnt)
                     0 : begin
-                        tx_axis_tdata <= {swap_endian(icmp_head[3]), 48'b3C0000450008};
+                        tx_axis_tdata <= {swap_endian(ip_head[3]), 48'b3C0000450008};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
+                        icmp_cnt <= 1;
+                    end
+                    1 : begin
+                        tx_axis_tdata <= {swap_endian(icmp_head[1]), swap_endian(icmp_head[0]), swap_endian(ip_head[9]), swap_endian(ip_head[8]), swap_endian(ip_head[7]), swap_endian(ip_head[6]), swap_endian(ip_head[5]), swap_endian(ip_head[4])};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 2;
+                    end
+                    2 : begin
+                        tx_axis_tdata <= {swap_endian(icmp_date_reg[0][47:0]), swap_endian(icmp_head[3]), swap_endian(icmp_head[2])};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 3;
+                    end
+                    3 : begin
+                        tx_axis_tdata <= {swap_endian(icmp_date_reg[1][47:0]), swap_endian(icmp_data_reg[0][63:48])};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 4;
+                    end
+                    4 : begin
+                        tx_axis_tdata <= {swap_endian(icmp_date_reg[2][47:0]), swap_endian(icmp_data_reg[1][63:48])};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 5;
+                    end
+                    5 : begin
+                        tx_axis_tdata <= {swap_endian(icmp_date_reg[3][47:0]), swap_endian(icmp_data_reg[2][63:48])};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 6;
+                    end
+                    6 : begin
+                        tx_axis_tdata <= {48'b0, swap_endian(icmp_data_reg[3][63:48])};
+                        tx_axis_tkeep <= 8'b0000_0011;
+                        tx_axis_tlast <= 1;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 0;
+                        state <= IDLE;
                     end
                 endcase
             end
