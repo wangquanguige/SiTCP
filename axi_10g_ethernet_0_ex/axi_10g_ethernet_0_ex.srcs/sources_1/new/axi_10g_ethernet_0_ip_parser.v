@@ -55,8 +55,10 @@ module axi_10g_ethernet_0_ip_parser #(
    output reg  [47:0]      arp_src_mac,
    output reg  [31:0]      arp_src_ip,
 
-   output reg  [47:0]      icmp_src_mac,
-   output reg  [31:0]      icmp_src_ip,
+   output reg  [63:0]      icmp_data_0,
+   output reg  [63:0]      icmp_data_1,
+   output reg  [63:0]      icmp_data_2,
+   output reg  [63:0]      icmp_data_3,
 
    output reg              arp_rx_done,
    output reg              icmp_rx_done
@@ -77,22 +79,38 @@ reg [31:0] des_ip;
 reg [31:0] des_ip_icmp;
 
 reg [7:0] icmp_pro;
+reg [1:0] icmp_cnt;
 
 /*reg [15:0] optype;
 reg [63:0] arp_head;
 reg [47:0] arp_src_mac;
 reg [31:0] arp_src_ip;*/
 
-function automatic reg [N-1:0] swap_endian;
-    input reg [N-1:0] value;
+function automatic [32-1:0] swap_endian_32;
+    input reg [32-1:0] value;
     integer i;
-    reg [N-1:0] reversed_value;
+    reg [32-1:0] swapped_value;
     begin
-        reversed_value = 'b0;
-        for (i = 0; i < N; i = i + 8) begin
-            reversed_value[i +: 8] = value[N - i - 1 -: 8];
+        swapped_value = 'b0; // 初始化反转后的位向量
+        for (i = 0; i < 32/8; i = i + 1) begin
+            // 每次处理8位（1字节），将字节从大端转换为小端
+            swapped_value[i*8 +: 8] = value[(32 - i*8 - 1) -: 8];
         end
-        swap_endian = reversed_value;
+        swap_endian_32 = swapped_value;
+    end
+endfunction
+
+function automatic [48-1:0] swap_endian_48;
+    input reg [48-1:0] value;
+    integer i;
+    reg [48-1:0] swapped_value;
+    begin
+        swapped_value = 'b0; // 初始化反转后的位向量
+        for (i = 0; i < 48/8; i = i + 1) begin
+            // 每次处理8位（1字节），将字节从大端转换为小端
+            swapped_value[i*8 +: 8] = value[(48 - i*8 - 1) -: 8];
+        end
+        swap_endian_48 = swapped_value;
     end
 endfunction
 
@@ -105,7 +123,6 @@ always @(posedge aclk) begin
             IDLE : begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= OP;
-                    icmp_src_mac[15:0] <= tdata1[63:48];
                     $display("1optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
@@ -114,7 +131,6 @@ always @(posedge aclk) begin
                     state <= DATA1;
                     optype <= tdata1[47:32];
                     arp_head[15:0] <= tdata1[63:48];
-                    icmp_src_mac[47:16] <= tdata1[31:0];
                     $display("2optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
@@ -133,7 +149,6 @@ always @(posedge aclk) begin
                     arp_src_mac[47:16] <= tdata1[31:0];
                     arp_src_ip <= tdata1[63:32];
                     des_ip_icmp[15:0] <= tdata1[63:48];
-                    icmp_src_ip <= tdata1[47:16];
                     $display("4optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
@@ -150,15 +165,44 @@ always @(posedge aclk) begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= DATA5;
                     des_ip[31:16] <= tdata1[15:0];
+                    icmp_data_0[47:0] <= tdata1[63:16];
+                    icmp_cnt <= 0;
                     $display("6optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
             DATA5 : begin
                 if (tkeep1 != 0 & tvalid1 & tlast1) begin
+                    icmp_data_3[63:48] <= tdata1[15:0];
                     state <= IDLE;
+                    icmp_cnt <= 0;
                     $display("7optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
+                else begin
+                    case (icmp_cnt)
+                        2'h0 : begin
+                            icmp_data_0[63:48] <= tdata1[15:0];
+                            icmp_data_1[47:0] <= tdata1[63:16];
+                            icmp_cnt <= 1;
+                        end
+                        2'h1 : begin
+                            icmp_data_1[63:48] <= tdata1[15:0];
+                            icmp_data_2[47:0] <= tdata1[63:16];
+                            icmp_cnt <= 2;
+                        end
+                        2'h2 : begin
+                            icmp_data_2[63:48] <= tdata1[15:0];
+                            icmp_data_3[47:0] <= tdata1[63:16];
+                            icmp_cnt <= 3;
+                        end
+                        2'h3 : begin
+                            icmp_data_3[63:48] <= tdata1[15:0];
+                            icmp_cnt <= 0;
+                        end
+                    endcase
+                    
+                end
             end
+
         endcase
     end
 end
@@ -169,10 +213,10 @@ always @(posedge aclk) begin
         icmp_rx_done <= 0;
     end
     else begin
-        if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0608 & swap_endian(des_ip) == BOARD_IP & (swap_endian(des_mac) == BOARD_MAC | swap_endian(des_mac) == 48'hff_ff_ff_ff_ff_ff)) begin
+        if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0608 & swap_endian_32(des_ip) == BOARD_IP & (swap_endian_48(des_mac) == BOARD_MAC | swap_endian_48(des_mac) == 48'hff_ff_ff_ff_ff_ff)) begin
             arp_rx_done <= 1;
         end
-        else if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0008 & icmp_pro == 8'h01 & swap_endian(des_ip_icmp) == BOARD_IP) begin
+        else if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0008 & icmp_pro == 8'h01 & swap_endian_32(des_ip_icmp) == BOARD_IP) begin
             icmp_rx_done <= 1;
         end
         else begin

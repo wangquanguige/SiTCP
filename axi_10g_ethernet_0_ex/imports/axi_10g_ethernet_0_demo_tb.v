@@ -190,17 +190,17 @@ parameter TB_MODE = "DEMO_TB";
     initial
     begin
 
-        frame0.data[0]  = 32'h04030201;  // <---
-        frame0.data[1]  = 32'h02020605;  //    |
+        frame0.data[0]  = 32'h33221100;  // <---
+        frame0.data[1]  = 32'h02025544;  //    |
         frame0.data[2]  = 32'h06050403;  //    |  This part of the frame is looped
         frame0.data[3]  = 32'h01000608;  //    |  if FRAME_GEN_MULTIPLIER is set to
         frame0.data[4]  = 32'h04060008;  //    |  more than 1
         frame0.data[5]  = 32'h02020100;  //    |
         frame0.data[6]  = 32'h06050403;  //    |
         frame0.data[7]  = 32'h55AA55AA;  //    |
-        frame0.data[8]  = 32'h04030201;  //    |
-        frame0.data[9]  = 32'h55AA0605;  //    |
-        frame0.data[10] = 32'hAA55AA55;  //    |
+        frame0.data[8]  = 32'h33221100;  //    |
+        frame0.data[9]  = 32'hA8C05544;  //    |
+        frame0.data[10] = 32'hAA550A01;  //    |
         frame0.data[11] = 32'h55AA55AA;  //    |
         frame0.data[12] = 32'hAA55AA55;  //    |
         frame0.data[13] = 32'h55AA55AA;  //    |
@@ -265,8 +265,8 @@ parameter TB_MODE = "DEMO_TB";
         frame1.data[4]  = 32'h17133C00;  //    |  more than 1
         frame1.data[5]  = 32'h01800000;  //    |
         frame1.data[6]  = 32'h77770000;  //    |
-        frame1.data[7]  = 32'h66667777;  //    |
-        frame1.data[8]  = 32'hAA556666;  //    |
+        frame1.data[7]  = 32'hA8C07777;  //    |
+        frame1.data[8]  = 32'hAA550A01;  //    |
         frame1.data[9]  = 32'h55AA55AA;  //    |
         frame1.data[10] = 32'hAA55AA55;  //    |
         frame1.data[11] = 32'h55AA55AA;  //    |

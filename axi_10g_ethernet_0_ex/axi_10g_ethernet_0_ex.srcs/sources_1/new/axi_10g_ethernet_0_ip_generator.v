@@ -34,13 +34,20 @@ module axi_10g_ethernet_0_ip_generator #(
    input       [31:0]      arp_dec_ip,
    input                   arp_rx_done,
 
-   input       [63:0]      icmp_data[3:0],
+   input       [63:0]      icmp_data_0,
+   input       [63:0]      icmp_data_1,
+   input       [63:0]      icmp_data_2,
+   input       [63:0]      icmp_data_3,
+   input                   icmp_rx_done,
 
    output reg  [63:0]     tx_axis_tdata,
    output reg  [7:0]      tx_axis_tkeep,
    output reg             tx_axis_tlast,
    output reg             tx_axis_tvalid
 );
+
+integer i;
+integer j;
 
 localparam IDLE = 0,
            START_ARP = 1,
@@ -81,9 +88,9 @@ reg [31:0] arp_dec_ip_reg;
 
 reg [47:0] icmp_dec_mac_reg;
 reg [31:0] icmp_dec_ip_reg; 
-reg [1:0]  icmp_cnt;
+reg [2:0]  icmp_cnt;
 
-function automatic [N-1:0] swap_endian;
+/*function automatic [N-1:0] swap_endian;
     input [N-1:0] value;
     integer i;
     reg [N-1:0] reversed_value;
@@ -93,6 +100,61 @@ function automatic [N-1:0] swap_endian;
             reversed_value[i +: 8] = value[N - i - 1 -: 8];
         end
         swap_endian = reversed_value;
+    end
+endfunction*/
+function automatic [16-1:0] swap_endian_16;
+    input reg [16-1:0] value;
+    integer i;
+    reg [16-1:0] swapped_value;
+    begin
+        swapped_value = 'b0; // 初始化反转后的位向量
+        for (i = 0; i < 16/8; i = i + 1) begin
+            // 每次处理8位（1字节），将字节从大端转换为小端
+            swapped_value[i*8 +: 8] = value[(16 - i*8 - 1) -: 8];
+        end
+        swap_endian_16 = swapped_value;
+    end
+endfunction
+
+function automatic [32-1:0] swap_endian_32;
+    input reg [32-1:0] value;
+    integer i;
+    reg [32-1:0] swapped_value;
+    begin
+        swapped_value = 'b0; // 初始化反转后的位向量
+        for (i = 0; i < 32/8; i = i + 1) begin
+            // 每次处理8位（1字节），将字节从大端转换为小端
+            swapped_value[i*8 +: 8] = value[(32 - i*8 - 1) -: 8];
+        end
+        swap_endian_32 = swapped_value;
+    end
+endfunction
+
+function automatic [48-1:0] swap_endian_48;
+    input reg [48-1:0] value;
+    integer i;
+    reg [48-1:0] swapped_value;
+    begin
+        swapped_value = 'b0; // 初始化反转后的位向量
+        for (i = 0; i < 48/8; i = i + 1) begin
+            // 每次处理8位（1字节），将字节从大端转换为小端
+            swapped_value[i*8 +: 8] = value[(48 - i*8 - 1) -: 8];
+        end
+        swap_endian_48 = swapped_value;
+    end
+endfunction
+
+function automatic [64-1:0] swap_endian_64;
+    input reg [64-1:0] value;
+    integer i;
+    reg [64-1:0] swapped_value;
+    begin
+        swapped_value = 'b0; // 初始化反转后的位向量
+        for (i = 0; i < 64/8; i = i + 1) begin
+            // 每次处理8位（1字节），将字节从大端转换为小端
+            swapped_value[i*8 +: 8] = value[(64 - i*8 - 1) -: 8];
+        end
+        swap_endian_64 = swapped_value;
     end
 endfunction
 
@@ -113,7 +175,10 @@ always @(posedge aclk) begin
     else if (icmp_rx_done) begin
         icmp_dec_mac_reg <= arp_dec_mac;
         icmp_dec_ip_reg <= arp_dec_ip;
-        icmp_data_reg <= icmp_data;
+        icmp_data_reg[0] <= icmp_data_0;
+        icmp_data_reg[1] <= icmp_data_1;
+        icmp_data_reg[2] <= icmp_data_2;
+        icmp_data_reg[3] <= icmp_data_3;
         state <= START_ICMP;
         icmp_cnt <= 0;
         ip_head_sum <= 0;
@@ -191,7 +256,7 @@ always @(posedge aclk) begin
             end
             START_ICMP : begin
                 ip_head[0] <= {IP_VERSION, IP_HEADER_LEGTH, IP_TYPE_SERVICE};
-                ip_head[1] <= icmp_total_length_reg;
+                ip_head[1] <= 16'h003C;
                 ip_head[2] <= IP_Identification;
                 IP_Identification <= IP_Identification + 1;
                 ip_head[3] <= IP_FLAGS_OFFSET;
@@ -199,9 +264,10 @@ always @(posedge aclk) begin
                 ip_head[5] <= 16'b0;
                 ip_head[6] <= BOARD_IP[31:16];
                 ip_head[7] <= BOARD_IP[15:0];
-                ip_head[8] <= swap_endian(icmp_dec_ip_reg)[31:16];
-                ip_head[9] <= swap_endian(icmp_dec_ip_reg)[15:0];
+                ip_head[8] <= swap_endian_16(icmp_dec_ip_reg[15:0]);
+                ip_head[9] <= swap_endian_16(icmp_dec_ip_reg[31:16]);
                 state <= CAL_HEADER_CHECKSUM;
+                $display("1");
             end
             CAL_HEADER_CHECKSUM : begin
                 ip_head_sum = ip_head_sum + ip_head[0];
@@ -219,7 +285,7 @@ always @(posedge aclk) begin
                 ip_head_sum = ip_head_sum[31:16] + ip_head_sum[15:0];
                 ip_head_sum = ip_head_sum[31:16] + ip_head_sum[15:0];
 
-                for (integer i = 0; i < 16; i = i + 1) begin
+                for (i = 0; i < 16; i = i + 1) begin
                     ip_head_sum[i] = 1- ip_head_sum[i];
                 end
 
@@ -231,6 +297,7 @@ always @(posedge aclk) begin
                 icmp_head[3] <= icmp_head[3] + 1;
 
                 state <= CAL_ICMP_HEADER_CHECKSUM;
+                $display("2");
             end
             CAL_ICMP_HEADER_CHECKSUM : begin
                 icmp_head_sum = icmp_head_sum + icmp_head[0];
@@ -238,9 +305,9 @@ always @(posedge aclk) begin
                 icmp_head_sum = icmp_head_sum + icmp_head[2];
                 icmp_head_sum = icmp_head_sum + icmp_head[3];
 
-                for (integer i = 0; i < 4; i = i + 1) begin
-                    for (integer j = 0; j < 64; j = j + 16) begin
-                        icmp_head_sum = icmp_head_sum + icmp_data_reg[i][j + 15 : j];
+                for (i = 0; i < 4; i = i + 1) begin
+                    for (j = 0; j < 64; j = j + 16) begin
+                        icmp_head_sum = icmp_head_sum + icmp_data_reg[i][j+ : 16];
                     end
                 end
                 
@@ -256,54 +323,65 @@ always @(posedge aclk) begin
 
                 state <= ICMP_TX;
                 icmp_cnt <= 0;
+                $display("3");
             end
             ICMP_TX : begin
+                $display("4");
                 case (icmp_cnt)
-                    0 : begin
-                        tx_axis_tdata <= {swap_endian(ip_head[3]), 48'b3C0000450008};
+                    3'h0 : begin
+                        tx_axis_tdata <= {swap_endian_16(ip_head[2]), 48'h3C0000450008};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 1;
                     end
-                    1 : begin
-                        tx_axis_tdata <= {swap_endian(icmp_head[1]), swap_endian(icmp_head[0]), swap_endian(ip_head[9]), swap_endian(ip_head[8]), swap_endian(ip_head[7]), swap_endian(ip_head[6]), swap_endian(ip_head[5]), swap_endian(ip_head[4])};
+                    3'h1 : begin
+                        tx_axis_tdata <= {swap_endian_16(icmp_head[1]), swap_endian_16(icmp_head[0]), swap_endian_16(ip_head[9]), swap_endian_16(ip_head[8]), swap_endian_16(ip_head[6]), swap_endian_16(ip_head[5]), swap_endian_16(ip_head[4]), swap_endian_16(ip_head[3])};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 2;
                     end
-                    2 : begin
-                        tx_axis_tdata <= {swap_endian(icmp_date_reg[0][47:0]), swap_endian(icmp_head[3]), swap_endian(icmp_head[2])};
+                    3'h2 : begin
+                        tx_axis_tdata <= {swap_endian_16(icmp_head[0]), swap_endian_16(ip_head[9]), swap_endian_16(ip_head[8]), swap_endian_16(ip_head[7])};
+                        //tx_axis_tdata <= {swap_endian_48(icmp_data_reg[0][47:0]), swap_endian_16(icmp_head[3]), swap_endian_16(icmp_head[2])};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 3;
                     end
-                    3 : begin
-                        tx_axis_tdata <= {swap_endian(icmp_date_reg[1][47:0]), swap_endian(icmp_data_reg[0][63:48])};
+                    3'h3 : begin
+                        tx_axis_tdata <= {swap_endian_16(icmp_data_reg[0][15:0]), swap_endian_16(icmp_head[3]), swap_endian_16(icmp_head[2]), swap_endian_16(icmp_head[1])};
+                        //tx_axis_tdata <= {swap_endian_48(icmp_data_reg[1][47:0]), swap_endian_16(icmp_data_reg[0][63:48])};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 4;
                     end
-                    4 : begin
-                        tx_axis_tdata <= {swap_endian(icmp_date_reg[2][47:0]), swap_endian(icmp_data_reg[1][63:48])};
+                    3'h4 : begin
+                        tx_axis_tdata <= {swap_endian_16(icmp_data_reg[1][15:0]), swap_endian_48(icmp_data_reg[0][63:16])};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 5;
                     end
-                    5 : begin
-                        tx_axis_tdata <= {swap_endian(icmp_date_reg[3][47:0]), swap_endian(icmp_data_reg[2][63:48])};
+                    3'h5 : begin
+                        tx_axis_tdata <= {swap_endian_16(icmp_data_reg[2][15:0]), swap_endian_48(icmp_data_reg[1][63:16])};
                         tx_axis_tkeep <= 8'b1111_1111;
                         tx_axis_tlast <= 0;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 6;
                     end
-                    6 : begin
-                        tx_axis_tdata <= {48'b0, swap_endian(icmp_data_reg[3][63:48])};
-                        tx_axis_tkeep <= 8'b0000_0011;
+                    3'h6 : begin
+                        tx_axis_tdata <= {swap_endian_16(icmp_data_reg[3][15:0]), swap_endian_48(icmp_data_reg[2][63:16])};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 1;
+                        tx_axis_tvalid <= 1;
+                        icmp_cnt <= 7;
+                    end
+                    3'h7 : begin
+                        tx_axis_tdata <= {16'b0, swap_endian_48(icmp_data_reg[3][63:16])};
+                        tx_axis_tkeep <= 8'b00011_1111;
                         tx_axis_tlast <= 1;
                         tx_axis_tvalid <= 1;
                         icmp_cnt <= 0;
