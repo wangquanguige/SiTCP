@@ -97,6 +97,8 @@ module axi_10g_ethernet_0_ip_block (
    wire          [63:0]      icmp_data_1;
    wire          [63:0]      icmp_data_2;
    wire          [63:0]      icmp_data_3;  
+   wire          [15:0]      icmp_identification;
+   wire          [15:0]      icmp_sequence_number;
 
    assign tx_axis_tdata                = tx_axis_as_tdata;
    assign tx_axis_tkeep                = tx_axis_as_tkeep;
@@ -209,7 +211,8 @@ module axi_10g_ethernet_0_ip_block (
       .icmp_data_1                      (icmp_data_1),
       .icmp_data_2                      (icmp_data_2),
       .icmp_data_3                      (icmp_data_3),
-
+      .icmp_identification              (icmp_identification),
+      .icmp_sequence_number             (icmp_sequence_number),
       .arp_rx_done                      (arp_rx_done),
       .icmp_rx_done                     (icmp_rx_done)
    );
@@ -251,6 +254,8 @@ module axi_10g_ethernet_0_ip_block (
       .icmp_data_1                      (icmp_data_1),
       .icmp_data_2                      (icmp_data_2),
       .icmp_data_3                      (icmp_data_3),
+      .icmp_identification              (icmp_identification),
+      .icmp_sequence_number             (icmp_sequence_number),
       .icmp_rx_done                     (icmp_rx_done),
 
       .tx_axis_tdata                   (tx_axis_as_tdata),

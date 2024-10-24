@@ -59,6 +59,8 @@ module axi_10g_ethernet_0_ip_parser #(
    output reg  [63:0]      icmp_data_1,
    output reg  [63:0]      icmp_data_2,
    output reg  [63:0]      icmp_data_3,
+   output reg  [15:0]      icmp_identification,
+   output reg  [15:0]      icmp_sequence_number,
 
    output reg              arp_rx_done,
    output reg              icmp_rx_done
@@ -138,6 +140,7 @@ always @(posedge aclk) begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= DATA2;
                     icmp_pro <= tdata1[63:56];
+                    icmp_identification <= tdata1[31:16];
                     arp_head[63:16] <= tdata1[47:0];
                     arp_src_mac[15:0] <= tdata1[63:48];
                     $display("3optyte: %h, data: %h, state %h", optype, tdata1, state);
@@ -165,6 +168,7 @@ always @(posedge aclk) begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= DATA5;
                     des_ip[31:16] <= tdata1[15:0];
+                    icmp_sequence_number <= tdata1[15:0];
                     icmp_data_0[47:0] <= tdata1[63:16];
                     icmp_cnt <= 0;
                     $display("6optyte: %h, data: %h, state %h", optype, tdata1, state);

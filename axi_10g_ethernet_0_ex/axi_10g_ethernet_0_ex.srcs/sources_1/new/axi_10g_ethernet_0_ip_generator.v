@@ -38,6 +38,8 @@ module axi_10g_ethernet_0_ip_generator #(
    input       [63:0]      icmp_data_1,
    input       [63:0]      icmp_data_2,
    input       [63:0]      icmp_data_3,
+   input       [15:0]      icmp_identification,
+   input       [15:0]      icmp_sequence_number,
    input                   icmp_rx_done,
 
    output reg  [63:0]     tx_axis_tdata,
@@ -68,8 +70,6 @@ localparam IP_VERSION = 16'h0004,
            IP_TYPE_SERVICE = 8'b0,
            IP_FLAGS_OFFSET = 16'b0,
            IP_TTL_PROTOCOL = 16'h8001;
-
-reg [15:0] IP_Identification;
 
 reg [15:0] ip_head [9:0];
 reg [31:0] ip_head_sum;
@@ -257,8 +257,7 @@ always @(posedge aclk) begin
             START_ICMP : begin
                 ip_head[0] <= {IP_VERSION, IP_HEADER_LEGTH, IP_TYPE_SERVICE};
                 ip_head[1] <= 16'h003C;
-                ip_head[2] <= IP_Identification;
-                IP_Identification <= IP_Identification + 1;
+                ip_head[2] <= swap_endian_16(icmp_identification);
                 ip_head[3] <= IP_FLAGS_OFFSET;
                 ip_head[4] <= IP_TTL_PROTOCOL;
                 ip_head[5] <= 16'b0;
@@ -294,7 +293,7 @@ always @(posedge aclk) begin
                 icmp_head[0] <= 16'b0;
                 icmp_head[1] <= 16'b0;
                 icmp_head[2] <= 16'h00_01;
-                icmp_head[3] <= icmp_head[3] + 1;
+                icmp_head[3] <= swap_endian_16(icmp_sequence_number);
 
                 state <= CAL_ICMP_HEADER_CHECKSUM;
                 $display("2");
