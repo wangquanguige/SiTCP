@@ -147,6 +147,10 @@ module axi_10g_ethernet_0_example_design
    reg               rx_statistics_valid;
    reg      [31:0]   rx_statistics_shift = 0;
 
+   wire     [63:0]   arbiter_tx_axis_tdata;
+   wire     [7:0]    arbiter_tx_axis_tkeep;
+   wire              arbiter_tx_axis_tvalid;
+   wire              arbiter_tx_axis_tlast;
    wire     [63:0]   tx_axis_tdata;
    wire     [7:0]    tx_axis_tkeep;
    wire              tx_axis_tvalid;
@@ -429,16 +433,31 @@ module axi_10g_ethernet_0_example_design
       .gen_active_flash                (gen_active_flash),
       .check_active_flash              (check_active_flash),
 
-      .tx_axis_tdata                   (tx_axis_tdata),
-      .tx_axis_tkeep                   (tx_axis_tkeep),
-      .tx_axis_tvalid                  (tx_axis_tvalid),
-      .tx_axis_tlast                   (tx_axis_tlast),
+      .tx_axis_tdata                   (arbiter_tx_axis_tdata),
+      .tx_axis_tkeep                   (arbiter_tx_axis_tkeep),
+      .tx_axis_tvalid                  (arbiter_tx_axis_tvalid),
+      .tx_axis_tlast                   (arbiter_tx_axis_tlast),
       .tx_axis_tready                  (tx_axis_tready),
       .rx_axis_tdata                   (rx_axis_tdata),
       .rx_axis_tkeep                   (rx_axis_tkeep),
       .rx_axis_tvalid                  (rx_axis_tvalid),
       .rx_axis_tlast                   (rx_axis_tlast),
       .rx_axis_tready                  (rx_axis_tready)
+   );
+
+   axi_10g_ethernet_0_arbiter arbiter (
+      .aclk                             (coreclk),
+      .aresetn                          (tx_axis_aresetn),
+
+      .rx_axis_tdata                    (arbiter_tx_axis_tdata),
+      .rx_axis_tkeep                    (arbiter_tx_axis_tkeep),
+      .rx_axis_tvalid                   (arbiter_tx_axis_tvalid),
+      .rx_axis_tlast                    (arbiter_tx_axis_tlast),
+
+      .tx_axis_tdata                    (tx_axis_tdata),
+      .tx_axis_tkeep                    (tx_axis_tkeep),
+      .tx_axis_tvalid                   (tx_axis_tvalid),
+      .tx_axis_tlast                    (tx_axis_tlast)
    );
 
 
