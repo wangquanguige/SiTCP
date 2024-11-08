@@ -53,6 +53,15 @@ module axi_10g_ethernet_0_ip_block (
    output                              tx_axis_tlast,
    input                               tx_axis_tready,
 
+   // ARP ADDR MAP
+   output      [47:0]                  rx_arp_mac,
+   output      [31:0]                  rx_arp_ip,
+   output                              rx_arp_en,
+
+   // signal to send ARP request
+   input                               tx_arp,
+   input       [31:0]                  tx_arp_ip,
+
    output wire                         gen_active_flash,
    output wire                         check_active_flash,
    output wire                         frame_error
@@ -92,6 +101,7 @@ module axi_10g_ethernet_0_ip_block (
    wire          [47:0]      arp_src_mac;
    wire          [31:0]      arp_src_ip;
    wire                      arp_rx_done;
+   wire          [31:0]      icmp_src_ip;
    wire                      icmp_rx_done;
    wire          [63:0]      icmp_data_0;
    wire          [63:0]      icmp_data_1;
@@ -207,6 +217,7 @@ module axi_10g_ethernet_0_ip_block (
       .arp_src_mac                      (arp_src_mac),
       .arp_src_ip                       (arp_src_ip),
 
+      .icmp_src_ip                      (icmp_src_ip),
       .icmp_data_0                      (icmp_data_0),
       .icmp_data_1                      (icmp_data_1),
       .icmp_data_2                      (icmp_data_2),
@@ -214,7 +225,12 @@ module axi_10g_ethernet_0_ip_block (
       .icmp_identification              (icmp_identification),
       .icmp_sequence_number             (icmp_sequence_number),
       .arp_rx_done                      (arp_rx_done),
-      .icmp_rx_done                     (icmp_rx_done)
+      .icmp_rx_done                     (icmp_rx_done),
+
+      // ARP ADDR MAP
+      .rx_arp_mac                       (rx_arp_mac),
+      .rx_arp_ip                        (rx_arp_ip),
+      .rx_arp_en                        (rx_arp_en)
    );
 
 
@@ -250,6 +266,7 @@ module axi_10g_ethernet_0_ip_block (
       .arp_dec_ip                       (arp_src_ip),
       .arp_rx_done                      (arp_rx_done),
 
+      .icmp_dec_ip                      (icmp_src_ip),
       .icmp_data_0                      (icmp_data_0),
       .icmp_data_1                      (icmp_data_1),
       .icmp_data_2                      (icmp_data_2),
@@ -261,7 +278,10 @@ module axi_10g_ethernet_0_ip_block (
       .tx_axis_tdata                   (tx_axis_as_tdata),
       .tx_axis_tkeep                   (tx_axis_as_tkeep),
       .tx_axis_tvalid                  (tx_axis_as_tvalid),
-      .tx_axis_tlast                   (tx_axis_as_tlast)
+      .tx_axis_tlast                   (tx_axis_as_tlast),
+
+      .tx_arp                           (tx_arp),
+      .tx_arp_ip                        (tx_arp_ip)
     );
 
 

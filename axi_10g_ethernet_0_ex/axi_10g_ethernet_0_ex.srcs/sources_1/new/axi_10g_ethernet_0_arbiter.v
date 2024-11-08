@@ -37,12 +37,13 @@ module axi_10g_ethernet_0_arbiter #(
    input                               rx_axis_tvalid,
    input                               rx_axis_tlast,
 
-   output      [63:0]                  tx_axis_tdata,
-   output      [7:0]                   tx_axis_tkeep,
-   output                              tx_axis_tvalid,
-   output                              tx_axis_tlast,
+   output reg  [63:0]                  tx_axis_tdata,
+   output reg  [7:0]                   tx_axis_tkeep,
+   output reg                          tx_axis_tvalid,
+   output reg                          tx_axis_tlast,
 
-   output                              tx_arp
+   output reg                          tx_arp,
+   output reg  [31:0]                  tx_arp_ip
 );
 
 localparam IDLE = 0,
@@ -50,12 +51,9 @@ localparam IDLE = 0,
            ADD_ADDR = 2,
            TX_ADDR = 3,
            TX_DATA = 4,
-           TX_EXTRA = 5;
+           TX_EXTRA = 5,
+           GARBAGE_TIME = 6;
 
-assign tx_axis_tdata = rx_axis_tdata;
-assign tx_axis_tkeep = rx_axis_tkeep;
-assign tx_axis_tvalid = rx_axis_tvalid;
-assign tx_axis_tlast = rx_axis_tlast;
 
 reg [47:0] mac_list[9:0];
 reg [31:0] ip_list[9:0];
@@ -109,7 +107,7 @@ function automatic [32-1:0] swap_endian_32;
 endfunction
 
 always @(posedge aclk) begin
-    if (!areset) begin
+    if (aresetn) begin
         state <= IDLE;
         list_head <= 0;
         list_tail <= 0;
@@ -118,7 +116,7 @@ always @(posedge aclk) begin
         ip_match <= 0;
         tx_arp <= 0;
         extra_data <= 0;
-        exta_keep <= 0;
+        extra_keep <= 0;
     end
 end
 
@@ -126,6 +124,8 @@ always @(posedge aclk) begin
     if (rx_arp_en) begin
         ip_list[list_tail] <= rx_arp_ip;
         mac_list[list_tail] <= rx_arp_mac;
+
+        $display("ip %h, mac %h", rx_arp_ip, rx_arp_mac);
 
         if ((list_tail + 1) % (list_cnt + 1) != list_head) begin
             list_tail = (list_tail + 1) % (list_cnt + 1);
@@ -163,12 +163,19 @@ end
 always @(posedge aclk) begin
     case (state)
         IDLE : begin
+            tx_axis_tdata <= 64'b0;
+            tx_axis_tkeep <= 8'b0000_0000;
+            tx_axis_tlast <= 0;
+            tx_axis_tvalid <= 0;
+            ip_match <= 0;
+
             if (rx_axis_tvalid) begin
                 optype <= rx_axis_tdata[15:0];
                 state <= RX_IP;
             end
         end
         RX_IP : begin
+            $display("00");
             case (rx_cnt)
                 0 : begin
                     rx_cnt <= 1;
@@ -183,31 +190,37 @@ always @(posedge aclk) begin
             endcase
         end
         ADD_ADDR : begin
-            if (optype == 16'b0608) begin
+            $display("11");
+            if (optype == 16'h0608) begin
                 des_ip = data_reg[0][47:16];
             end
             else begin
                 des_ip = data_reg[1][47:16];
             end
 
+            $display("desp_ip: %h", des_ip);
+
             i = list_head;
             while (i != list_tail) begin
                 if (ip_list[i] == des_ip) begin
                     des_mac = mac_list[i];
                     ip_match = 1;
-                    break;
+                    
                 end
                 i = (i + 1) % (list_cnt + 1);
             end
 
             if (ip_match == 1) begin
-                state <= TX;
+                state <= TX_ADDR;
             end
             else begin
+                state <= GARBAGE_TIME;
                 tx_arp <= 1;
+                tx_arp_ip <= des_ip;
             end
         end
         TX_ADDR : begin
+            $display("22");
             tx_axis_tdata <= {swap_endian_16(BOARD_MAC[47:32]), des_mac};
             tx_axis_tkeep <= 8'b1111_1111;
             tx_axis_tlast <= 0;
@@ -216,7 +229,8 @@ always @(posedge aclk) begin
             state <= TX_DATA;
         end
         TX_DATA : begin
-            if (tlast_reg[5] != 0) begin
+            $display("33");
+            if (last_reg[5] != 0) begin
                 tx_axis_tdata <= {data_reg[5][31:0], extra_data};
                 extra_data <= data_reg[5][63:32];
                 tx_axis_tkeep <= 8'b1111_1111;
@@ -301,6 +315,7 @@ always @(posedge aclk) begin
             end
         end
         TX_EXTRA : begin
+            $display("44");
             tx_axis_tdata <= extra_data;
             tx_axis_tkeep <= extra_keep;
             tx_axis_tlast <= 1;
@@ -308,6 +323,12 @@ always @(posedge aclk) begin
             extra_data <= 0;
             extra_keep <= 0;
             state <= IDLE;
+        end
+        GARBAGE_TIME : begin
+            tx_arp <= 0;
+            if (last_reg[5] == 1) begin
+                state <= IDLE;
+            end
         end
     endcase
 end

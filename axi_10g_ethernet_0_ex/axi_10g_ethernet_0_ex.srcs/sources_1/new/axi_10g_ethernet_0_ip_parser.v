@@ -55,6 +55,7 @@ module axi_10g_ethernet_0_ip_parser #(
    output reg  [47:0]      arp_src_mac,
    output reg  [31:0]      arp_src_ip,
 
+   output reg  [31:0]      icmp_src_ip,
    output reg  [63:0]      icmp_data_0,
    output reg  [63:0]      icmp_data_1,
    output reg  [63:0]      icmp_data_2,
@@ -63,7 +64,12 @@ module axi_10g_ethernet_0_ip_parser #(
    output reg  [15:0]      icmp_sequence_number,
 
    output reg              arp_rx_done,
-   output reg              icmp_rx_done
+   output reg              icmp_rx_done,
+
+   // ARP ADDR MAP
+   output reg  [47:0]      rx_arp_mac,
+   output reg  [31:0]      rx_arp_ip,
+   output reg              rx_arp_en
 );
 
 localparam IDLE = 0,
@@ -152,6 +158,7 @@ always @(posedge aclk) begin
                     arp_src_mac[47:16] <= tdata1[31:0];
                     arp_src_ip <= tdata1[63:32];
                     des_ip_icmp[15:0] <= tdata1[63:48];
+                    icmp_src_ip <= tdata1[47:16];
                     $display("4optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
@@ -215,10 +222,14 @@ always @(posedge aclk) begin
     if (areset) begin
         arp_rx_done <= 0;
         icmp_rx_done <= 0;
+        rx_arp_en <= 0;
     end
     else begin
         if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0608 & swap_endian_32(des_ip) == BOARD_IP & (swap_endian_48(des_mac) == BOARD_MAC | swap_endian_48(des_mac) == 48'hff_ff_ff_ff_ff_ff)) begin
             arp_rx_done <= 1;
+            rx_arp_en <= 1;
+            rx_arp_ip <= arp_src_ip;
+            rx_arp_mac <= arp_src_mac;
         end
         else if (state == DATA5 & tkeep1 != 0 & tvalid1 & tlast1 & optype == 16'h0008 & icmp_pro == 8'h01 & swap_endian_32(des_ip_icmp) == BOARD_IP) begin
             icmp_rx_done <= 1;
@@ -226,6 +237,7 @@ always @(posedge aclk) begin
         else begin
             arp_rx_done <= 0;
             icmp_rx_done <= 0;
+            rx_arp_en <= 0;
         end
     end
 end
