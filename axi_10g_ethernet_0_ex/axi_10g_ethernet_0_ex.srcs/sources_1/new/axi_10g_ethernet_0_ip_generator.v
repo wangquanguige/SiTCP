@@ -67,7 +67,7 @@ localparam IDLE = 0,
            CAL_ICMP_HEADER_CHECKSUM = 9,
            ICMP_TX = 10;
 
-localparam START_ARP_REQUEST = 1,
+localparam START_ARP_REQUEST = 1;
 
 
 localparam IP_VERSION = 16'h0004,
@@ -208,7 +208,11 @@ always @(posedge aclk) begin
                 tx_axis_tvalid <= 0;
             end
             START_ARP_REQUEST : begin
-                
+                tx_axis_tdata <= 64'b0;
+                tx_axis_tkeep <= 8'b0000_0000;
+                tx_axis_tlast <= 0;
+                tx_axis_tvalid <= 0;
+                // TODO
             end
         endcase
     end
