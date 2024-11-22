@@ -1,0 +1,166 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Resetting the core...
+DUT frame stimulus is from the testbench
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+real have reset?
+real have reset?
+real have reset?
+real have reset?
+real have reset?
+real have reset?
+real have reset?
+** Note: Setting MDC Frequency to 10.4MHZ....
+s_axi_wdata = 00000045, s_axi_awaddr = 500
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Reseting MAC RX
+s_axi_wdata = 90000605, s_axi_awaddr = 404
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Writing MAC ADDRESS
+s_axi_wdata = 04030201, s_axi_awaddr = 400
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Flow Control
+s_axi_wdata = e0000000, s_axi_awaddr = 40c
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Reseting MAC TX
+s_axi_wdata = 90000000, s_axi_awaddr = 408
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 90000000, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 00030800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Specified PCS control register address for 10GBASE-R
+** Note: Set BASE-R control into PCS default
+s_axi_wdata = 00002000, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 00034800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 00002000, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 00034800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Read PCS control
+s_axi_wdata = 00000020, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 0003c800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Specified status register 1 address for 10GBASE-R
+s_axi_wdata = 00000020, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 00030800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: Reading status register 
+s_axi_wdata = 00000020, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 0003c800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: MDIO_POLL_CHECK
+            61423301 PCS MDIO REG32 Accessed After MDIO Address Operation
+s_axi_wdata = 00000020, s_axi_awaddr = 508
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+s_axi_wdata = 0003c800, s_axi_awaddr = 504
+s_axi_wdata = 00000000, s_axi_awaddr = 000
+** Note: CONFIG_DONE, BASE-R is in lock
+Receiver: frame inserted into Serial interface
+Receiver: frame inserted into Serial interface
+wr_axis_tdata 0202554433221100, IS_TX           0, time             68776648
+wr_axis_tdata 0100060806050403, IS_TX           0, time             68783116
+wr_axis_tdata 0202010004060008, IS_TX           0, time             68789584
+wr_axis_tdata 55aa55aa06050403, IS_TX           0, time             68796052
+wr_axis_tdata a8c0554433221100, IS_TX           0, time             68802520
+wr_axis_tdata 55aa55aaaa550a01, IS_TX           0, time             68808988
+wr_axis_tdata 55aa55aaaa55aa55, IS_TX           0, time             68815456
+wr_axis_tdata 6f083f5caa55aa55, IS_TX           0, time             68821924
+wr_axis_tdata 0000000000000000, IS_TX           0, time             68828392
+wr_axis_tdata 0202060504030201, IS_TX           0, time             68841328
+wr_axis_tdata 0045000806050403, IS_TX           0, time             68847796
+wr_axis_tdata 0180000017133c00, IS_TX           0, time             68854264
+wr_axis_tdata a8c055aa55aa0000, IS_TX           0, time             68860732
+wr_axis_tdata 55aa55aaaa550a01, IS_TX           0, time             68867200
+wr_axis_tdata 55aa55aaaa55aa55, IS_TX           0, time             68873668
+wr_axis_tdata 55aa55aaaa55aa55, IS_TX           0, time             68880136
+wr_axis_tdata 07070707aa55aa55, IS_TX           0, time             68886604
+wr_axis_tdata 0707070707070707, IS_TX           0, time             68893072
+wr_axis_tdata 0707070707070707, IS_TX           0, time             68899540
+1optyte: xxxx, data: 0202554433221100, state 0
+wr_axis_tdata 5e06070707070707, IS_TX           0, time             68906008
+2optyte: xxxx, data: 0100060806050403, state 1
+wr_axis_tdata 000000000000d7af, IS_TX           0, time             68912476
+3optyte: 0608, data: 0202010004060008, state 2
+4optyte: 0608, data: 55aa55aa06050403, state 3
+5optyte: 0608, data: a8c0554433221100, state 4
+6optyte: 0608, data: 55aa55aaaa550a01, state 5
+7optyte: 0608, data: 6f083f5caa55aa55, state 6
+ip 55aa55aa, mac 060504030202
+arp00
+arp11
+arp22
+00
+arp033
+00
+1optyte: 0608, data: 0202060504030201, state 0
+00
+2optyte: 0608, data: 0045000806050403, state 1
+11
+desp_ip: 55aa55aa
+3optyte: 0008, data: 0180000017133c00, state 2
+22
+wr_axis_tdata 1100060504030202, IS_TX           1, time             69003028
+4optyte: 0008, data: a8c055aa55aa0000, state 3
+33
+wr_axis_tdata 0100060855443322, IS_TX           1, time             69009496
+5optyte: 0008, data: 55aa55aaaa550a01, state 4
+33
+wr_axis_tdata 1100020004060008, IS_TX           1, time             69015964
+6optyte: 0008, data: 55aa55aaaa55aa55, state 5
+33
+wr_axis_tdata 0a01a8c055443322, IS_TX           1, time             69022432
+33
+wr_axis_tdata 55aa060504030202, IS_TX           1, time             69028900
+33
+wr_axis_tdata 00000000000055aa, IS_TX           1, time             69035368
+33
+wr_axis_tdata 0000000000000000, IS_TX           1, time             69041836
+44
+wr_axis_tdata 0000000000000000, IS_TX           1, time             69048304
+7optyte: 0008, data: 5e06070707070707, state 6
+wr_axis_tdata 0000000000000000, IS_TX           1, time             69054772
+1
+2
+3
+4
+4
+4
+00
+4
+00
+4
+00
+4
+11
+desp_ip: 55aa55aa
+4
+22
+wr_axis_tdata 1100060504030202, IS_TX           1, time             69125920
+4
+33
+wr_axis_tdata 0045000855443322, IS_TX           1, time             69132388
+33
+wr_axis_tdata 0180000017133c00, IS_TX           1, time             69138856
+33
+wr_axis_tdata 55aa0a01a8c04d51, IS_TX           1, time             69145324
+33
+wr_axis_tdata 0100cdce000055aa, IS_TX           1, time             69151792
+33
+wr_axis_tdata aa5555aa55aaaa55, IS_TX           1, time             69158260
+33
+wr_axis_tdata aa5555aa55aaaa55, IS_TX           1, time             69164728
+33
+wr_axis_tdata 0707070755aaaa55, IS_TX           1, time             69171196
+44
+wr_axis_tdata 0000000007070707, IS_TX           1, time             69177664
+wr_axis_tdata 0000000000000000, IS_TX           1, time             69184132
+Transmitter: data and CRC check PASS for frame number           0
+Transmitter: data and CRC check PASS for frame number           1
+** Error: Testbench timed out
+$stop called at time : 90 us : File "C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_demo_tb.v" Line 730

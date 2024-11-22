@@ -51,7 +51,8 @@ module axi_10g_ethernet_0_tcp_block (
    output      [7:0]                   tcp_tx_axis_tkeep,
    output                              tcp_tx_axis_tvalid,
    output                              tcp_tx_axis_tlast,
-   input                               tx_axis_tready,
+   output                              tcp_tx_axis_en,
+   input                               tcp_tx_axis_tready,
 
    // ARP ADDR MAP
    output      [47:0]                  rx_arp_mac,
@@ -101,7 +102,8 @@ module axi_10g_ethernet_0_tcp_block (
    assign tcp_tx_axis_tkeep                = tx_axis_as_tkeep;
    assign tcp_tx_axis_tvalid               = tx_axis_as_tvalid;
    assign tcp_tx_axis_tlast                = tx_axis_as_tlast;
-   assign tx_axis_as_tready            = tx_axis_tready;
+   assign tcp_tx_axis_en                   = tx_axis_as_tlast;
+   assign tx_axis_as_tready            = tcp_tx_axis_tready;
    assign rx_axis_tready               = tx_axis_as_tready;
 
    axi_10g_ethernet_0_sync_reset areset_gen (

@@ -82,6 +82,9 @@ localparam IDLE = 0,
 
 reg [2:0] state;
 
+reg [47:0] eth_des;
+reg [47:0] eth_sed;
+
 reg [47:0] des_mac;
 reg [31:0] des_ip;
 reg [31:0] des_ip_icmp;
@@ -131,12 +134,15 @@ always @(posedge aclk) begin
             IDLE : begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= OP;
+                    eth_des <= tdata1[47:0];
+                    eth_sed[15:0] <= tdata1[63:48];
                     $display("1optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
             OP : begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= DATA1;
+                    eth_sed[47:16] <= tdata1[31:0];
                     optype <= tdata1[47:32];
                     arp_head[15:0] <= tdata1[63:48];
                     $display("2optyte: %h, data: %h, state %h", optype, tdata1, state);
@@ -220,6 +226,11 @@ end
 
 always @(posedge aclk) begin
     if (areset) begin
+        arp_rx_done <= 0;
+        icmp_rx_done <= 0;
+        rx_arp_en <= 0;
+    end
+    else if (swap_endian_48(eth_des) != BOARD_MAC) begin
         arp_rx_done <= 0;
         icmp_rx_done <= 0;
         rx_arp_en <= 0;

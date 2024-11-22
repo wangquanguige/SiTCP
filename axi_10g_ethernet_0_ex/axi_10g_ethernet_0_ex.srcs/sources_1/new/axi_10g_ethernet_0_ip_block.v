@@ -53,10 +53,13 @@ module axi_10g_ethernet_0_ip_block (
    output                              tx_axis_tlast,
    input                               tx_axis_tready,
 
-   // ARP ADDR MAP
-   output      [47:0]                  rx_arp_mac,
-   output      [31:0]                  rx_arp_ip,
-   output                              rx_arp_en,
+   // data from the TCP TX path
+   input       [63:0]                  tcp_tx_axis_tdata,
+   input       [7:0]                   tcp_tx_axis_tkeep,
+   input                               tcp_tx_axis_tvalid,
+   input                               tcp_tx_axis_tlast,
+   input                               tcp_tx_axis_en,
+   output                              tcp_tx_axis_tready,
 
    // signal to send ARP request
    input                               tx_arp,
@@ -100,15 +103,20 @@ module axi_10g_ethernet_0_ip_block (
    wire          [63:0]      arp_head;
    wire          [47:0]      arp_src_mac;
    wire          [31:0]      arp_src_ip;
-   wire                      arp_rx_done;
+   wire                      arp_reply_en;
+
    wire          [31:0]      icmp_src_ip;
-   wire                      icmp_rx_done;
+   wire                      icmp_reply_en;
    wire          [63:0]      icmp_data_0;
    wire          [63:0]      icmp_data_1;
    wire          [63:0]      icmp_data_2;
    wire          [63:0]      icmp_data_3;  
    wire          [15:0]      icmp_identification;
    wire          [15:0]      icmp_sequence_number;
+
+   wire          [47:0]      arp_map_mac;
+   wire          [31:0]      arp_map_ip;
+   wire                      arp_map_en;
 
    assign tx_axis_tdata                = tx_axis_as_tdata;
    assign tx_axis_tkeep                = tx_axis_as_tkeep;
@@ -212,11 +220,14 @@ module axi_10g_ethernet_0_ip_block (
       .tlast                           (mux_tlast),
       .tready                          (mux_tready),
 
+      // ARP REPLY
       .optype                           (optype),
       .arp_head                         (arp_head),
       .arp_src_mac                      (arp_src_mac),
       .arp_src_ip                       (arp_src_ip),
+      .arp_rx_done                      (arp_reply_en),
 
+      // ICMP REPLY
       .icmp_src_ip                      (icmp_src_ip),
       .icmp_data_0                      (icmp_data_0),
       .icmp_data_1                      (icmp_data_1),
@@ -224,13 +235,12 @@ module axi_10g_ethernet_0_ip_block (
       .icmp_data_3                      (icmp_data_3),
       .icmp_identification              (icmp_identification),
       .icmp_sequence_number             (icmp_sequence_number),
-      .arp_rx_done                      (arp_rx_done),
-      .icmp_rx_done                     (icmp_rx_done),
+      .icmp_rx_done                     (icmp_reply_en),
 
       // ARP ADDR MAP
-      .rx_arp_mac                       (rx_arp_mac),
-      .rx_arp_ip                        (rx_arp_ip),
-      .rx_arp_en                        (rx_arp_en)
+      .rx_arp_mac                       (arp_map_mac),
+      .rx_arp_ip                        (arp_map_ip),
+      .rx_arp_en                        (arp_map_en)
    );
 
 
@@ -256,32 +266,41 @@ module axi_10g_ethernet_0_ip_block (
       .tx_axis_tready                  (tx_axis_as_tready)
    );
 */
-    axi_10g_ethernet_0_ip_generator ip_generator (
+
+
+    axi_10g_ethernet_0_arbiter arbiter (
       .aclk                            (aclk),
       .areset                          (areset),
 
+      // ARP REPLY
       .optype                           (optype),
       .arp_head                         (arp_head),
-      .arp_dec_mac                      (arp_src_mac),
-      .arp_dec_ip                       (arp_src_ip),
-      .arp_rx_done                      (arp_rx_done),
+      .arp_src_mac                      (arp_src_mac),
+      .arp_src_ip                       (arp_src_ip),
+      .arp_rx_done                      (arp_reply_en),
 
-      .icmp_dec_ip                      (icmp_src_ip),
+      // ICMP REPLY
+      .icmp_src_ip                      (icmp_src_ip),
       .icmp_data_0                      (icmp_data_0),
       .icmp_data_1                      (icmp_data_1),
       .icmp_data_2                      (icmp_data_2),
       .icmp_data_3                      (icmp_data_3),
       .icmp_identification              (icmp_identification),
       .icmp_sequence_number             (icmp_sequence_number),
-      .icmp_rx_done                     (icmp_rx_done),
+      .icmp_rx_done                     (icmp_reply_en),
 
-      .tx_axis_tdata                   (tx_axis_as_tdata),
-      .tx_axis_tkeep                   (tx_axis_as_tkeep),
-      .tx_axis_tvalid                  (tx_axis_as_tvalid),
-      .tx_axis_tlast                   (tx_axis_as_tlast),
+      // ARP ADDR MAP
+      .rx_arp_mac                       (arp_map_mac),
+      .rx_arp_ip                        (arp_map_ip),
+      .rx_arp_en                        (arp_map_en),
 
-      .tx_arp                           (tx_arp),
-      .tx_arp_ip                        (tx_arp_ip)
+      // TCP TX
+      .tcp_tx_axis_tdata                (tcp_tx_axis_tdata),
+      .tcp_tx_axis_tkeep                (tcp_tx_axis_tkeep),
+      .tcp_tx_axis_tvalid               (tcp_tx_axis_tvalid),
+      .tcp_tx_axis_tlast                (tcp_tx_axis_tlast),
+      .tcp_tx_axis_en                   (tcp_tx_axis_en),
+      .tcp_tx_axis_tready               (tcp_tx_axis_tready)
     );
 
 

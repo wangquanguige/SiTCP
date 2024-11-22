@@ -2,3 +2,6 @@ Running: xsim.dir/axi_10g_ethernet_0_demo_tb_behav/xsimk.exe -simmode gui -wdb a
 Design successfully loaded
 Design Loading Memory Usage: 56808 KB (Peak: 56808 KB)
 Design Loading CPU Usage: 140 ms
+Simulation completed
+Simulation Memory Usage: 84256 KB (Peak: 84256 KB)
+Simulation CPU Usage: 72765 ms
