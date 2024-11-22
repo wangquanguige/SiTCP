@@ -97,6 +97,7 @@ reg [31:0] icmp_dec_ip_reg;
 reg [2:0]  icmp_cnt;
 
 reg [31:0] tx_arp_ip_reg;
+reg [2:0] tx_arp_cnt;
 
 /*function automatic [N-1:0] swap_endian;
     input [N-1:0] value;
@@ -173,6 +174,7 @@ always @(posedge aclk) begin
         arp_head_reg <= 0;
         arp_dec_mac_reg <= 0;
         arp_dec_ip_reg <= 0;
+        tx_arp_cnt <= 0;
     end
     else if (arp_rx_done) begin
         optype_reg <= optype;
@@ -198,6 +200,7 @@ always @(posedge aclk) begin
     if (tx_arp) begin
         tx_arp_ip_reg <= tx_arp_ip;
         arp_request_state <= START_ARP_REQUEST;
+        tx_arp_cnt <= 0;
     end
     else begin
         case (arp_request_state)
@@ -208,11 +211,57 @@ always @(posedge aclk) begin
                 tx_axis_tvalid <= 0;
             end
             START_ARP_REQUEST : begin
-                tx_axis_tdata <= 64'b0;
-                tx_axis_tkeep <= 8'b0000_0000;
-                tx_axis_tlast <= 0;
-                tx_axis_tvalid <= 0;
-                // TODO
+                case (tx_arp_cnt)
+                    3'h0 : begin
+                        tx_axis_tdata <= {8'h04, 8'h06, 16'h0008, 16'h0100, 16'h0608};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        tx_arp_cnt <= tx_arp_cnt + 1;
+                        $display("arp00");
+                    end
+                    3'h1 : begin
+                        tx_axis_tdata <= {BOARD_MAC[7:0], BOARD_MAC[15:8], BOARD_MAC[23:16], BOARD_MAC[31:24], BOARD_MAC[39:32], BOARD_MAC[47:40], 16'h01_00};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        tx_arp_cnt <= tx_arp_cnt + 1;
+                        $display("arp11");
+                    end
+                    3'h2 : begin
+                        tx_axis_tdata <= {32'b0, BOARD_IP[7:0], BOARD_IP[15:8], BOARD_IP[23:16], BOARD_IP[31:24]};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        tx_arp_cnt <= tx_arp_cnt + 1;
+                        $display("arp22");
+                    end
+                    3'h3 : begin
+                        tx_axis_tdata <= {16'b0, tx_arp_ip_reg[31:0], 16'b0};
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        tx_arp_cnt <= tx_arp_cnt + 1;
+                        $display("arp33");
+                    end
+                    3'h4 : begin
+                        tx_axis_tdata <= 64'b0;
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 0;
+                        tx_axis_tvalid <= 1;
+                        tx_arp_cnt <= tx_arp_cnt + 1;
+                        $display("arp44");
+                    end
+                    3'h5 : begin
+                        tx_axis_tdata <= 64'b0;
+                        tx_axis_tkeep <= 8'b1111_1111;
+                        tx_axis_tlast <= 1;
+                        tx_axis_tvalid <= 1;
+                        tx_arp_cnt <= 0;
+                        arp_request_state <= IDLE;
+                        $display("arp55");
+                    end
+                endcase
             end
         endcase
     end
@@ -236,6 +285,7 @@ always @(posedge aclk) begin
                 tx_axis_tlast <= 0;
                 tx_axis_tvalid <= 1;
                 state <= DATA1;
+                $display("arp00");
             end
             DATA1 : begin
                 tx_axis_tdata <= {BOARD_MAC[7:0], BOARD_MAC[15:8], BOARD_MAC[23:16], BOARD_MAC[31:24], BOARD_MAC[39:32], BOARD_MAC[47:40], 16'h02_00};
@@ -243,6 +293,7 @@ always @(posedge aclk) begin
                 tx_axis_tlast <= 0;
                 tx_axis_tvalid <= 1;
                 state <= DATA2;
+                $display("arp11");
             end
             DATA2 : begin
                 tx_axis_tdata <= {arp_dec_mac_reg[31:0], BOARD_IP[7:0], BOARD_IP[15:8], BOARD_IP[23:16], BOARD_IP[31:24]};
@@ -250,6 +301,7 @@ always @(posedge aclk) begin
                 tx_axis_tlast <= 0;
                 tx_axis_tvalid <= 1;
                 state <= DATA3;
+                $display("arp22");
             end
             DATA3 : begin
                 tx_axis_tdata <= {16'b0, arp_dec_ip_reg[31:0], arp_dec_mac_reg[47:32]};
@@ -257,6 +309,7 @@ always @(posedge aclk) begin
                 tx_axis_tlast <= 0;
                 tx_axis_tvalid <= 1;
                 state <= DATA4;
+                $display("arp033");
             end
             DATA4 : begin
                 tx_axis_tdata <= {64'b0};

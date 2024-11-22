@@ -1,13 +1,17 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/APPs/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 2e6bea84743140ee8b6f6461b6dbf8f8 --debug typical --relax --mt 2 -L ten_gig_eth_mac_v15_1_7 -L xil_defaultlib -L gtwizard_ultrascale_v1_7_7 -L ten_gig_eth_pcs_pma_v6_0_16 -L xlconstant_v1_1_6 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot axi_10g_ethernet_0_demo_tb_behav xil_defaultlib.axi_10g_ethernet_0_demo_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/App/Xilinx2019/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 2e6bea84743140ee8b6f6461b6dbf8f8 --debug typical --relax --mt 2 -L ten_gig_eth_mac_v15_1_7 -L xil_defaultlib -L gtwizard_ultrascale_v1_7_7 -L ten_gig_eth_pcs_pma_v6_0_16 -L xlconstant_v1_1_6 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot axi_10g_ethernet_0_demo_tb_behav xil_defaultlib.axi_10g_ethernet_0_demo_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 64 for port 'inter_tdata' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_block.v:140]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'inter_tkeep' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_block.v:141]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 64 for port 'tx_tdata' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_block.v:150]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'tx_tkeep' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_block.v:151]
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4328] File: E:/Documents/xilinx_project/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_demo_tb.v Line: 757 : Sensitivity on input argument "d1" of task "rx_stimulus_send_column" may never get triggered.
-WARNING: [XSIM 43-4328] File: E:/Documents/xilinx_project/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_demo_tb.v Line: 758 : Sensitivity on input argument "c1" of task "rx_stimulus_send_column" may never get triggered.
+WARNING: [XSIM 43-4328] File: C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_demo_tb.v Line: 757 : Sensitivity on input argument "d1" of task "rx_stimulus_send_column" may never get triggered.
+WARNING: [XSIM 43-4328] File: C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_demo_tb.v Line: 758 : Sensitivity on input argument "c1" of task "rx_stimulus_send_column" may never get triggered.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.frame_typ_axi_10g_ethernet_0
@@ -71,6 +75,10 @@ Compiling module xil_defaultlib.axi_10g_ethernet_0_ip_parser
 Compiling module xil_defaultlib.axi_10g_ethernet_0_ip_generator
 Compiling module xil_defaultlib.axi_10g_ethernet_0_axi_pat_check
 Compiling module xil_defaultlib.axi_10g_ethernet_0_ip_block
+Compiling module xil_defaultlib.axi_10g_ethernet_0_tcp_rx_block
+Compiling module xil_defaultlib.axi_10g_ethernet_0_tcp_tx_block
+Compiling module xil_defaultlib.axi_10g_ethernet_0_tcp_block
+Compiling module xil_defaultlib.axi_10g_ethernet_0_arbiter
 Compiling module xil_defaultlib.axi_10g_ethernet_0_example_desig...
 Compiling module xil_defaultlib.axi_10g_ethernet_0_demo_tb
 Compiling module xil_defaultlib.glbl

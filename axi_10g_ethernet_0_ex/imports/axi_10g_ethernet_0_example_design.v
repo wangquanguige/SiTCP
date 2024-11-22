@@ -151,6 +151,12 @@ module axi_10g_ethernet_0_example_design
    wire     [7:0]    arbiter_tx_axis_tkeep;
    wire              arbiter_tx_axis_tvalid;
    wire              arbiter_tx_axis_tlast;
+
+   wire     [63:0]   arbiter_tcp_tx_axis_tdata;
+   wire     [7:0]    arbiter_tcp_tx_axis_tkeep;
+   wire              arbiter_tcp_tx_axis_tvalid;
+   wire              arbiter_tcp_tx_axis_tlast;
+
    wire     [63:0]   tx_axis_tdata;
    wire     [7:0]    tx_axis_tkeep;
    wire              tx_axis_tvalid;
@@ -461,6 +467,49 @@ module axi_10g_ethernet_0_example_design
       .tx_arp_ip                       (tx_arp_ip)
    );
 
+   axi_10g_ethernet_0_tcp_block tcp_block (
+      .dest_addr                       (48'hda0102030405),
+      .src_addr                        (48'h5a0102030405),
+      .max_size                        (15'd300),
+      .min_size                        (15'd066),
+      .enable_vlan                     (enable_vlan),
+      .vlan_id                         (12'h002),
+      .vlan_priority                   (3'b010),
+      .preamble_data                   (56'hD55555567555FB),
+      .enable_custom_preamble          (enable_custom_preamble_coreclk_sync),
+
+      .aclk                            (coreclk),
+
+      .aresetn                         (tx_axis_aresetn),
+      .enable_pat_gen                  (pat_gen_start),
+      .reset_error                     (reset_error_sync),
+      .insert_error                    (insert_error_sync),
+      .enable_pat_check                (enable_pat_check),
+      .enable_loopback                 (!pat_gen_start),
+      .frame_error                     (frame_error),
+      .gen_active_flash                (gen_active_flash),
+      .check_active_flash              (check_active_flash),
+
+      .tcp_tx_axis_tdata                   (arbiter_tcp_tx_axis_tdata),
+      .tcp_tx_axis_tkeep                   (arbiter_tcp_tx_axis_tkeep),
+      .tcp_tx_axis_tvalid                  (arbiter_tcp_tx_axis_tvalid),
+      .tcp_tx_axis_tlast                   (arbiter_tcp_tx_axis_tlast),
+
+      .tx_axis_tready                  (tx_axis_tready),
+      .rx_axis_tdata                   (rx_axis_tdata),
+      .rx_axis_tkeep                   (rx_axis_tkeep),
+      .rx_axis_tvalid                  (rx_axis_tvalid),
+      .rx_axis_tlast                   (rx_axis_tlast),
+      .rx_axis_tready                  (rx_axis_tready),
+
+      .rx_arp_mac                      (rx_arp_mac),
+      .rx_arp_ip                       (rx_arp_ip),
+      .rx_arp_en                       (rx_arp_en),
+
+      .tx_arp                          (tx_arp),
+      .tx_arp_ip                       (tx_arp_ip)
+   ) ;
+
    axi_10g_ethernet_0_sync_reset areset_gen (
       .clk                             (coreclk),
       .reset_in                        (~tx_axis_aresetn),
@@ -479,6 +528,11 @@ module axi_10g_ethernet_0_example_design
       .rx_axis_tkeep                    (arbiter_tx_axis_tkeep),
       .rx_axis_tvalid                   (arbiter_tx_axis_tvalid),
       .rx_axis_tlast                    (arbiter_tx_axis_tlast),
+
+      .tcp_rx_axis_tdata                (arbiter_tcp_tx_axis_tdata),
+      .tcp_rx_axis_tkeep                (arbiter_tcp_tx_axis_tkeep),
+      .tcp_rx_axis_tvalid               (arbiter_tcp_tx_axis_tvalid),
+      .tcp_rx_axis_tlast                (arbiter_tcp_tx_axis_tlast),      
 
       .tx_axis_tdata                    (tx_axis_tdata),
       .tx_axis_tkeep                    (tx_axis_tkeep),

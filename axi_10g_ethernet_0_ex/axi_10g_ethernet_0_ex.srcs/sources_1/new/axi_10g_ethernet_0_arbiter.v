@@ -37,10 +37,24 @@ module axi_10g_ethernet_0_arbiter #(
    input                               rx_axis_tvalid,
    input                               rx_axis_tlast,
 
+   input       [63:0]                  icmp_rx_axis_tdata,
+   input       [7:0]                   icmp_rx_axis_tkeep,
+   input                               icmp_rx_axis_tvalid,
+   input                               icmp_rx_axis_tlast,
+
+   input       [63:0]                  ip_rx_axis_tdata,
+   input       [7:0]                   ip_rx_axis_tkeep,
+   input                               ip_rx_axis_tvalid,
+   input                               ip_rx_axis_tlast,
+
    output reg  [63:0]                  tx_axis_tdata,
    output reg  [7:0]                   tx_axis_tkeep,
    output reg                          tx_axis_tvalid,
    output reg                          tx_axis_tlast,
+
+   output reg                          tcp_en,
+   output reg                          arp_en,
+   output reg                          icmp_en,
 
    output reg                          tx_arp,
    output reg  [31:0]                  tx_arp_ip
@@ -230,7 +244,7 @@ always @(posedge aclk) begin
         end
         TX_DATA : begin
             $display("33");
-            if (last_reg[5] != 0) begin
+            if (last_reg[5] != 1) begin
                 tx_axis_tdata <= {data_reg[5][31:0], extra_data};
                 extra_data <= data_reg[5][63:32];
                 tx_axis_tkeep <= 8'b1111_1111;

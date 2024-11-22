@@ -27,6 +27,7 @@ verilog xil_defaultlib  \
 "../../../../axi_10g_ethernet_0_ex.srcs/sources_1/ip/axi_10g_ethernet_0/bd_0/ip/ip_4/sim/bd_efdb_0_pma_pmd_type_driver_0.v" \
 "../../../../axi_10g_ethernet_0_ex.srcs/sources_1/ip/axi_10g_ethernet_0/bd_0/sim/bd_efdb_0.v" \
 "../../../../axi_10g_ethernet_0_ex.srcs/sources_1/ip/axi_10g_ethernet_0/sim/axi_10g_ethernet_0.v" \
+"../../../../axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arbiter.v" \
 "../../../../imports/axi_10g_ethernet_0_axi_fifo.v" \
 "../../../../imports/axi_10g_ethernet_0_axi_lite_sm.v" \
 "../../../../imports/axi_10g_ethernet_0_axi_pat_check.v" \
@@ -40,6 +41,9 @@ verilog xil_defaultlib  \
 "../../../../axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_ip_parser.v" \
 "../../../../imports/axi_10g_ethernet_0_sync_block.v" \
 "../../../../imports/axi_10g_ethernet_0_sync_reset.v" \
+"../../../../axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_block.v" \
+"../../../../axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_rx_block.v" \
+"../../../../axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_tcp_tx_block.v" \
 "../../../../imports/axi_10g_ethernet_0_xgmac_fifo.v" \
 "../../../../imports/axi_10g_ethernet_0_demo_tb.v" \
 
