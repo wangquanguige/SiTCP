@@ -33,11 +33,6 @@ module axi_10g_ethernet_0_ip_block (
 
    input wire                          aclk,
    input wire                          aresetn,
-   input wire                          reset_error,
-   input wire                          insert_error,
-   input wire                          enable_pat_gen,
-   input wire                          enable_pat_check,
-   input wire                          enable_loopback,
 
    // data from the RX data path
    input       [63:0]                  rx_axis_tdata,

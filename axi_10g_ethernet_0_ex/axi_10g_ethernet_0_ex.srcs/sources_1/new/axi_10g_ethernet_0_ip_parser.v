@@ -50,10 +50,10 @@ module axi_10g_ethernet_0_ip_parser #(
    output reg              tlast,
    input                   tready,
 
-   output reg  [15:0]      optype,
-   output reg  [63:0]      arp_head,
    output reg  [47:0]      arp_src_mac,
    output reg  [31:0]      arp_src_ip,
+   output reg              arp_reply_en,
+   input                   arp_reply_tready,
 
    output reg  [31:0]      icmp_src_ip,
    output reg  [63:0]      icmp_data_0,
@@ -63,7 +63,7 @@ module axi_10g_ethernet_0_ip_parser #(
    output reg  [15:0]      icmp_identification,
    output reg  [15:0]      icmp_sequence_number,
 
-   output reg              arp_rx_done,
+   
    output reg              icmp_rx_done,
 
    // ARP ADDR MAP
@@ -81,6 +81,8 @@ localparam IDLE = 0,
            DATA5 = 6;
 
 reg [2:0] state;
+
+reg [3:0] optype;
 
 reg [47:0] eth_des;
 reg [47:0] eth_sed;
@@ -143,8 +145,6 @@ always @(posedge aclk) begin
                 if (tkeep1 != 0 & tvalid1) begin
                     state <= DATA1;
                     eth_sed[47:16] <= tdata1[31:0];
-                    optype <= tdata1[47:32];
-                    arp_head[15:0] <= tdata1[63:48];
                     $display("2optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
             end
@@ -153,7 +153,6 @@ always @(posedge aclk) begin
                     state <= DATA2;
                     icmp_pro <= tdata1[63:56];
                     icmp_identification <= tdata1[31:16];
-                    arp_head[63:16] <= tdata1[47:0];
                     arp_src_mac[15:0] <= tdata1[63:48];
                     $display("3optyte: %h, data: %h, state %h", optype, tdata1, state);
                 end
@@ -226,12 +225,12 @@ end
 
 always @(posedge aclk) begin
     if (areset) begin
-        arp_rx_done <= 0;
+        arp_reply_en <= 0;
         icmp_rx_done <= 0;
         rx_arp_en <= 0;
     end
     else if (swap_endian_48(eth_des) != BOARD_MAC) begin
-        arp_rx_done <= 0;
+        arp_reply_en <= 0;
         icmp_rx_done <= 0;
         rx_arp_en <= 0;
     end

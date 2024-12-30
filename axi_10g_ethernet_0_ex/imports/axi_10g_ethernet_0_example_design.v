@@ -415,35 +415,69 @@ module axi_10g_ethernet_0_example_design
       .rx_axis_tlast                   (rx_axis_tlast),
       .rx_axis_tready                  (rx_axis_tready)
    );*/
-   axi_10g_ethernet_0_ip_block ip_block (
+
+   axi_10g_ethernet_0_deliver deliver (
+      .aclk                            (coreclk),
+      .areset                          (areset),
+
+      .rx_axis_tdata                   (rx_axis_tdata),
+      .rx_axis_tkeep                   (rx_axis_tkeep),
+      .rx_axis_tvalid                  (rx_axis_tvalid),
+      .rx_axis_tlast                   (rx_axis_tlast),
+      .rx_axis_tready                  (rx_axis_tready),
+
+      .rx_axis_tdata                   (arp_rx_axis_tdata),
+      .rx_axis_tkeep                   (arp_rx_axis_tkeep),
+      .rx_axis_tvalid                  (arp_rx_axis_tvalid),
+      .rx_axis_tlast                   (arp_rx_axis_tlast),
+      .rx_axis_tready                  (arp_rx_axis_tready),
+
+      .rx_axis_tdata                   (icmp_rx_axis_tdata),
+      .rx_axis_tkeep                   (icmp_rx_axis_tkeep),
+      .rx_axis_tvalid                  (icmp_rx_axis_tvalid),
+      .rx_axis_tlast                   (icmp_rx_axis_tlast),
+      .rx_axis_tready                  (icmp_rx_axis_tready),
+
+      .rx_axis_tdata                   (tcp_rx_axis_tdata),
+      .rx_axis_tkeep                   (tcp_rx_axis_tkeep),
+      .rx_axis_tvalid                  (tcp_rx_axis_tvalid),
+      .rx_axis_tlast                   (tcp_rx_axis_tlast),
+      .rx_axis_tready                  (tcp_rx_axis_tready)
+   );
+
+   axi_10g_ethernet_0_arp_block arp_block (
       .dest_addr                       (48'hda0102030405),
       .src_addr                        (48'h5a0102030405),
-      .max_size                        (15'd300),
-      .min_size                        (15'd066),
-      .enable_vlan                     (enable_vlan),
-      .vlan_id                         (12'h002),
-      .vlan_priority                   (3'b010),
-      .preamble_data                   (56'hD55555567555FB),
-      .enable_custom_preamble          (enable_custom_preamble_coreclk_sync),
 
       .aclk                            (coreclk),
-
-      .aresetn                         (tx_axis_aresetn),
-      .enable_pat_gen                  (pat_gen_start),
-      .reset_error                     (reset_error_sync),
-      .insert_error                    (insert_error_sync),
-      .enable_pat_check                (enable_pat_check),
-      .enable_loopback                 (!pat_gen_start),
-      .frame_error                     (frame_error),
-      .gen_active_flash                (gen_active_flash),
-      .check_active_flash              (check_active_flash),
+      .areset                          (areset),
 
       .tx_axis_tdata                   (tx_axis_tdata),
       .tx_axis_tkeep                   (tx_axis_tkeep),
       .tx_axis_tvalid                  (tx_axis_tvalid),
       .tx_axis_tlast                   (tx_axis_tlast),
-
       .tx_axis_tready                  (tx_axis_tready),
+
+      .rx_axis_tdata                   (rx_axis_tdata),
+      .rx_axis_tkeep                   (rx_axis_tkeep),
+      .rx_axis_tvalid                  (rx_axis_tvalid),
+      .rx_axis_tlast                   (rx_axis_tlast),
+      .rx_axis_tready                  (rx_axis_tready)
+   );
+
+   axi_10g_ethernet_0_ip_block ip_block (
+      .dest_addr                       (48'hda0102030405),
+      .src_addr                        (48'h5a0102030405),
+
+      .aclk                            (coreclk),
+      .areset                          (areset),
+
+      .tx_axis_tdata                   (tx_axis_tdata),
+      .tx_axis_tkeep                   (tx_axis_tkeep),
+      .tx_axis_tvalid                  (tx_axis_tvalid),
+      .tx_axis_tlast                   (tx_axis_tlast),
+      .tx_axis_tready                  (tx_axis_tready),
+
       .rx_axis_tdata                   (rx_axis_tdata),
       .rx_axis_tkeep                   (rx_axis_tkeep),
       .rx_axis_tvalid                  (rx_axis_tvalid),
@@ -504,7 +538,7 @@ module axi_10g_ethernet_0_example_design
       .clk                             (coreclk),
       .reset_in                        (~tx_axis_aresetn),
       .reset_out                       (areset)
-      );
+   );
 
 
 
