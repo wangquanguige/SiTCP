@@ -22,6 +22,8 @@ wire            arp_reply_tready            ;
 wire            arp_request_tready          ;      
 wire            arp_reply_en                ;    
 wire            arp_request_en              ;  
+wire            arp_reply_done              ;    
+wire            arp_request_done            ;  
 
 // 模块负责生成arp响应报文，同时内部存储ip-mac表
 axi_10g_ethernet_0_arp_reply arp_reply ( 
@@ -60,8 +62,11 @@ axi_10g_ethernet_0_arp_control arp_control (
 
     .arp_request_en                     (arp_request_en)        ,
     .arp_request_tready                 (arp_request_tready)    ,
+    .arp_request_done                   (arp_request_done)      ,
+
     .arp_reply_en                       (arp_reply_en)          ,
-    .arp_reply_tready                   (arp_reply_tready)      
+    .arp_reply_tready                   (arp_reply_tready)      ,
+    .arp_reply_done                     (arp_reply_done)        
 );
 
 endmodule
