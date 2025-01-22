@@ -1,0 +1,1666 @@
+
+*** Running vivado
+    with args -log Top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source Top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/123/Documents/xilinx_project/GitHub/Ethernet/ip_repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/App/Xilinx2019/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.cache/ip 
+Command: synth_design -top Top -part xc7k325tffg900-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 23000 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1026.766 ; gain = 233.688
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'PowerOnReset' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/PowerOnReset.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PowerOnReset' (2#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/PowerOnReset.v:23]
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:46225]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (3#1) [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:46225]
+INFO: [Synth 8-6157] synthesizing module 'GTX_ROD_Datalink' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:28]
+	Parameter EXAMPLE_CONFIG_INDEPENDENT_LANES bound to: 1 - type: integer 
+	Parameter EXAMPLE_LANE_WITH_START_CHAR bound to: 0 - type: integer 
+	Parameter EXAMPLE_WORDS_IN_BRAM bound to: 512 - type: integer 
+	Parameter EXAMPLE_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter EXAMPLE_USE_CHIPSCOPE bound to: 0 - type: integer 
+	Parameter STABLE_CLOCK_PERIOD bound to: 10 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:87]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:88]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:91]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:92]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:93]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:94]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:95]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:96]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:97]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:104]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:105]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:106]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:107]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:108]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:109]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:110]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:117]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:118]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:119]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:120]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:121]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:122]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:123]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:130]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:131]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:132]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:133]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:134]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:135]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:136]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:143]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:144]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:145]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:146]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:147]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:148]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:149]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:156]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:157]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:158]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:159]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:160]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:161]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:162]
+INFO: [Synth 8-6157] synthesizing module 'GTX_ROD_Link_support' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_support.v:70]
+	Parameter EXAMPLE_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter STABLE_CLOCK_PERIOD bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'GTX_ROD_Link_GT_USRCLK_SOURCE' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_GT_USRCLK_SOURCE.v:68]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE2' [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33090]
+	Parameter CLKCM_CFG bound to: TRUE - type: string 
+	Parameter CLKRCV_TRST bound to: TRUE - type: string 
+	Parameter CLKSWING_CFG bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS_GTE2' (4#1) [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33090]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (5#1) [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'GTX_ROD_Link_GT_USRCLK_SOURCE' (6#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_GT_USRCLK_SOURCE.v:68]
+INFO: [Synth 8-6157] synthesizing module 'GTX_ROD_Link_common' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_common.v:69]
+	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_QPLLREFCLK_SEL bound to: 3'b001 
+	Parameter QPLL_FBDIV_TOP bound to: 32 - type: integer 
+	Parameter QPLL_FBDIV_IN bound to: 10'b0001100000 
+	Parameter QPLL_FBDIV_RATIO bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'GTXE2_COMMON' [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:21991]
+	Parameter BIAS_CFG bound to: 64'b0000000000000000000001000000000000000000000000000001000000000000 
+	Parameter COMMON_CFG bound to: 0 - type: integer 
+	Parameter IS_DRPCLK_INVERTED bound to: 1'b0 
+	Parameter IS_GTGREFCLK_INVERTED bound to: 1'b0 
+	Parameter IS_QPLLLOCKDETCLK_INVERTED bound to: 1'b0 
+	Parameter QPLL_CFG bound to: 27'b000011010000000000111000001 
+	Parameter QPLL_CLKOUT_CFG bound to: 4'b0000 
+	Parameter QPLL_COARSE_FREQ_OVRD bound to: 6'b010000 
+	Parameter QPLL_COARSE_FREQ_OVRD_EN bound to: 1'b0 
+	Parameter QPLL_CP bound to: 10'b0000011111 
+	Parameter QPLL_CP_MONITOR_EN bound to: 1'b0 
+	Parameter QPLL_DMONITOR_SEL bound to: 1'b0 
+	Parameter QPLL_FBDIV bound to: 10'b0001100000 
+	Parameter QPLL_FBDIV_MONITOR_EN bound to: 1'b0 
+	Parameter QPLL_FBDIV_RATIO bound to: 1'b1 
+	Parameter QPLL_INIT_CFG bound to: 24'b000000000000000000000110 
+	Parameter QPLL_LOCK_CFG bound to: 16'b0010000111101000 
+	Parameter QPLL_LPF bound to: 4'b1111 
+	Parameter QPLL_REFCLK_DIV bound to: 1 - type: integer 
+	Parameter SIM_QPLLREFCLK_SEL bound to: 3'b001 
+	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_VERSION bound to: 4.0 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'GTXE2_COMMON' (7#1) [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:21991]
+INFO: [Synth 8-6155] done synthesizing module 'GTX_ROD_Link_common' (8#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_common.v:69]
+INFO: [Synth 8-6157] synthesizing module 'GTX_ROD_Link_common_reset' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_common_reset.v:74]
+	Parameter STABLE_CLOCK_PERIOD bound to: 10 - type: integer 
+	Parameter STARTUP_DELAY bound to: 500 - type: integer 
+	Parameter WAIT_CYCLES bound to: 50 - type: integer 
+	Parameter WAIT_MAX bound to: 60 - type: integer 
+	Parameter INIT bound to: 1'b0 
+	Parameter ASSERT_COMMON_RESET bound to: 1'b1 
+INFO: [Synth 8-226] default block is never used [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_common_reset.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'GTX_ROD_Link_common_reset' (9#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_common_reset.v:74]
+INFO: [Synth 8-6157] synthesizing module 'GTX_ROD_Link' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/realtime/GTX_ROD_Link_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'GTX_ROD_Link' (10#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/realtime/GTX_ROD_Link_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'GTX_ROD_Link_support' (11#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Link_support.v:70]
+INFO: [Synth 8-6157] synthesizing module 'RODlink_Data_Encode' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Encode.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'RODlink_Data_Encode' (12#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Encode.v:26]
+INFO: [Synth 8-6157] synthesizing module 'RODlink_Data_Decode' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Decode.v:26]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Decode.v:503]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Decode.v:504]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Decode.v:505]
+INFO: [Synth 8-6155] done synthesizing module 'RODlink_Data_Decode' (13#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/RODlink_Data_Decode.v:26]
+WARNING: [Synth 8-3848] Net GTX_TX_data_FEB6 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1573]
+WARNING: [Synth 8-3848] Net GTX_TX_valid_FEB6 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1574]
+WARNING: [Synth 8-3848] Net GTX_TX_data_FEB5 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1562]
+WARNING: [Synth 8-3848] Net GTX_TX_valid_FEB5 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1563]
+WARNING: [Synth 8-3848] Net GTX_TX_data_FEB4 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1551]
+WARNING: [Synth 8-3848] Net GTX_TX_valid_FEB4 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1552]
+WARNING: [Synth 8-3848] Net GTX_TX_data_FEB3 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1540]
+WARNING: [Synth 8-3848] Net GTX_TX_valid_FEB3 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1541]
+WARNING: [Synth 8-3848] Net GTX_TX_data_FEB2 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1529]
+WARNING: [Synth 8-3848] Net GTX_TX_valid_FEB2 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1530]
+WARNING: [Synth 8-3848] Net GTX_TX_data_FEB1 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1518]
+WARNING: [Synth 8-3848] Net GTX_TX_valid_FEB1 in module/entity GTX_ROD_Datalink does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:1519]
+INFO: [Synth 8-6155] done synthesizing module 'GTX_ROD_Datalink' (14#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/GTX_ROD_Datalink.v:28]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_example_design' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:84]
+	Parameter FIFO_SIZE bound to: 1024 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:306]
+WARNING: [Synth 8-6896] event control except as first statement of always block inside initial block, initial block items will be ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:313]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_fifo_block' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_fifo_block.v:62]
+	Parameter FIFO_SIZE bound to: 1024 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/realtime/axi_10g_ethernet_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0' (15#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/realtime/axi_10g_ethernet_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_xgmac_fifo' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_xgmac_fifo.v:102]
+	Parameter TX_FIFO_SIZE bound to: 1024 - type: integer 
+	Parameter RX_FIFO_SIZE bound to: 1024 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_axi_fifo' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:82]
+	Parameter FIFO_SIZE bound to: 1024 - type: integer 
+	Parameter IS_TX bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter IS_RX bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_sync_block' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_block.v:64]
+	Parameter C_NUM_SYNC_REGS bound to: 5 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* shreg_extract = "no" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_block.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_block.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_sync_block' (16#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_block.v:64]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_sync_reset' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:62]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "NO" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:70]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:70]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "NO" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:72]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "NO" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:74]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "NO" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:76]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:76]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "NO" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:78]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:78]
+INFO: [Synth 8-5534] Detected attribute (* SHREG_EXTRACT = "NO" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:80]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_sync_reset' (17#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_sync_reset.v:62]
+WARNING: [Synth 8-639] system function call 'time' not supported [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:707]
+INFO: [Synth 8-251] wr_axis_tdata xxxxxxxxxxxxxxxx, IS_TX 1, time 1'b0 [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:707]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_fifo_ram' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_fifo_ram.v:60]
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter RAM_DEPTH bound to: 1024 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_fifo_ram.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_fifo_ram' (18#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_fifo_ram.v:60]
+WARNING: [Synth 8-6014] Unused sequential element ignore_frame_reg was removed.  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:242]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_axi_fifo' (19#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:82]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_axi_fifo__parameterized0' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:82]
+	Parameter FIFO_SIZE bound to: 1024 - type: integer 
+	Parameter IS_TX bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter IS_RX bound to: 1'b1 
+WARNING: [Synth 8-639] system function call 'time' not supported [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:707]
+INFO: [Synth 8-251] wr_axis_tdata xxxxxxxxxxxxxxxx, IS_TX 0, time 1'b0 [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:707]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_axi_fifo__parameterized0' (19#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_xgmac_fifo' (20#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_xgmac_fifo.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_fifo_block' (21#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_fifo_block.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_axi_lite_sm' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:67]
+	Parameter STARTUP bound to: 0 - type: integer 
+	Parameter RESET_MAC_TX bound to: 1 - type: integer 
+	Parameter RESET_MAC_RX bound to: 2 - type: integer 
+	Parameter MDIO_ADDR bound to: 3 - type: integer 
+	Parameter MDIO_RD bound to: 4 - type: integer 
+	Parameter MDIO_RD_1 bound to: 5 - type: integer 
+	Parameter MDIO_WR bound to: 6 - type: integer 
+	Parameter MDIO_ADDR_1 bound to: 7 - type: integer 
+	Parameter MDIO_ADDR_2 bound to: 8 - type: integer 
+	Parameter MDIO_POLL_CHECK bound to: 9 - type: integer 
+	Parameter MDIO_CHECK_DATA bound to: 10 - type: integer 
+	Parameter CONFIG_DONE bound to: 11 - type: integer 
+	Parameter MDIO_READ_PCS_RESET bound to: 12 - type: integer 
+	Parameter MDIO_READ_PCS_RESET_POLL bound to: 13 - type: integer 
+	Parameter MDIO_READ_PCS_RESET_READ bound to: 14 - type: integer 
+	Parameter MDIO_RESET_CHECK bound to: 15 - type: integer 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter SET_DATA bound to: 1 - type: integer 
+	Parameter INIT bound to: 32'sb00000000000000000000000000000010 
+	Parameter POLL bound to: 3 - type: integer 
+	Parameter READ bound to: 1 - type: integer 
+	Parameter WRITE bound to: 2 - type: integer 
+	Parameter DONE bound to: 3 - type: integer 
+	Parameter CONFIG_MANAGEMENT_ADDR bound to: 17'b00000010100000000 
+	Parameter RECEIVER_ADDR bound to: 17'b00000010000000100 
+	Parameter TRANSMITTER_ADDR bound to: 17'b00000010000001000 
+	Parameter MDIO_CONTROL bound to: 17'b00000010100000100 
+	Parameter MDIO_TX_DATA bound to: 17'b00000010100001000 
+	Parameter MDIO_RX_DATA bound to: 17'b00000010100001100 
+	Parameter MDIO_OP_ADDR bound to: 2'b00 
+	Parameter MDIO_OP_RD bound to: 2'b11 
+	Parameter MDIO_OP_RD_INCR bound to: 2'b10 
+	Parameter MDIO_OP_WR bound to: 2'b01 
+	Parameter PRT_ADDR bound to: 5'b00000 
+	Parameter DEV_ADDR bound to: 5'b00011 
+	Parameter PHY_CONTROL_REG bound to: 8'b00000000 
+	Parameter PHY_STATUS_REG bound to: 8'b00000001 
+	Parameter PHY_ABILITY_REG bound to: 8'b00000100 
+	Parameter PHY_1000BASET_CONTROL_REG bound to: 8'b00001001 
+INFO: [Synth 8-251] ** Note: Setting MDC Frequency to 10.4MHZ.... [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:350]
+INFO: [Synth 8-251] ** Note: Reseting MAC RX [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:358]
+INFO: [Synth 8-251] ** Note: Reseting MAC TX [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:373]
+INFO: [Synth 8-251] ** Note: Specified PCS control register address for 10GBASE-R [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:395]
+INFO: [Synth 8-251] ** Note: Issuing PCS reset [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:398]
+INFO: [Synth 8-251] ** Note: Set BASE-R control into PCS default [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:403]
+INFO: [Synth 8-251] ** Note: PCS RESET POLL [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:451]
+INFO: [Synth 8-251] ** Note: PCS RESET is cleared [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:453]
+INFO: [Synth 8-251] ** Note: Specified PCS control register address for 10GBASE-R [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:467]
+INFO: [Synth 8-251] ** Note: Set BASE-R control into PCS loopback  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:471]
+INFO: [Synth 8-251] ** Note: Read PCS control [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:511]
+INFO: [Synth 8-251] ** Note: Specified status register 1 address for 10GBASE-R [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:534]
+INFO: [Synth 8-251] ** Note: Reading status register  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:547]
+INFO: [Synth 8-251] ** Note: MDIO_POLL_CHECK [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:558]
+INFO: [Synth 8-251] ** Note: CONFIG_DONE, BASE-R is in lock [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:577]
+WARNING: [Synth 8-6014] Unused sequential element prev_axi_state_reg was removed.  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:292]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_axi_lite_sm' (22#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_lite_sm.v:67]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_arp_block' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_block.v:23]
+	Parameter show_output_block bound to: 1 - type: integer 
+	Parameter show_message_type bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_arp_parser' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:23]
+	Parameter BOARD_MAC bound to: 48'b000100010010001000110011010001000101010101100110 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter show_message_type bound to: 1 - type: integer 
+	Parameter ARP_TYPE bound to: 16'b0000100000000110 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter ARP_HEAD bound to: 1 - type: integer 
+	Parameter OP bound to: 2 - type: integer 
+	Parameter MAC_IP bound to: 3 - type: integer 
+	Parameter DATA bound to: 4 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:55]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:56]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:57]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:58]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:59]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:60]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:81]
+INFO: [Synth 8-251] Received message is arp_request. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:149]
+INFO: [Synth 8-251] Received message is arp_reply. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:159]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_arp_parser' (23#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_parser.v:23]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_arp_generator' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_generator.v:1]
+	Parameter show_output_block bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_arp_reply' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:24]
+	Parameter BOARD_MAC bound to: 48'b000100010010001000110011010001000101010101100110 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter ARP_HEAD bound to: 1 - type: integer 
+	Parameter OP bound to: 2 - type: integer 
+	Parameter MAC_IP bound to: 3 - type: integer 
+	Parameter DES_MAC bound to: 4 - type: integer 
+	Parameter DES_IP bound to: 5 - type: integer 
+	Parameter PAD_ONE bound to: 6 - type: integer 
+	Parameter PAD_TWO bound to: 7 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_arp_reply' (24#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:24]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_arp_request' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:23]
+	Parameter BOARD_MAC bound to: 48'b000100010010001000110011010001000101010101100110 
+	Parameter BOARD_IP bound to: -1062731510 - type: integer 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter ARP_HEAD bound to: 1 - type: integer 
+	Parameter OP bound to: 2 - type: integer 
+	Parameter MAC_IP bound to: 3 - type: integer 
+	Parameter DES_MAC bound to: 4 - type: integer 
+	Parameter DES_IP bound to: 5 - type: integer 
+	Parameter PAD_ONE bound to: 6 - type: integer 
+	Parameter PAD_TWO bound to: 7 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:123]
+WARNING: [Synth 8-6014] Unused sequential element mac_list_reg was removed. 
+WARNING: [Synth 8-3848] Net ip_list[2] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[3] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[4] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[5] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[6] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[7] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[8] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+WARNING: [Synth 8-3848] Net ip_list[9] in module/entity axi_10g_ethernet_0_arp_request does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_arp_request' (25#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:23]
+INFO: [Synth 8-6157] synthesizing module 'axi_10g_ethernet_0_arp_control' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_control.v:23]
+	Parameter show_output_block bound to: 1 - type: integer 
+INFO: [Synth 8-251] Now arp_request_block is outputting, data is xxxxxxxxxxxxxxxx [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_control.v:99]
+INFO: [Synth 8-251] Now arp_reply_block is outputting, data is xxxxxxxxxxxxxxxx [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_control.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_arp_control' (26#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_arp_generator' (27#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_generator.v:1]
+WARNING: [Synth 8-3848] Net tx_tcp_done in module/entity axi_10g_ethernet_0_arp_block does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_block.v:98]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_arp_block' (28#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_block.v:23]
+WARNING: [Synth 8-6104] Input port 'tx_axis_tdata' has an internal driver [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:327]
+WARNING: [Synth 8-6104] Input port 'tx_axis_tkeep' has an internal driver [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:328]
+WARNING: [Synth 8-6104] Input port 'tx_axis_tvalid' has an internal driver [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:329]
+WARNING: [Synth 8-6104] Input port 'tx_axis_tlast' has an internal driver [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:330]
+WARNING: [Synth 8-6104] Input port 'rx_axis_tready' has an internal driver [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:337]
+WARNING: [Synth 8-7023] instance 'arp_block' of module 'axi_10g_ethernet_0_arp_block' has 15 connections declared, but only 14 given [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:323]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'arp_block'. This will prevent further optimization [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:323]
+WARNING: [Synth 8-6014] Unused sequential element tx_statistics_valid_reg was removed.  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:372]
+WARNING: [Synth 8-6014] Unused sequential element tx_statistics_shift_reg was removed.  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:374]
+WARNING: [Synth 8-6014] Unused sequential element rx_statistics_valid_reg was removed.  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:385]
+WARNING: [Synth 8-6014] Unused sequential element rx_statistics_shift_reg was removed.  [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:387]
+WARNING: [Synth 8-3848] Net areset in module/entity axi_10g_ethernet_0_example_design does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:325]
+INFO: [Synth 8-6155] done synthesizing module 'axi_10g_ethernet_0_example_design' (29#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_example_design.v:84]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: FALSE - type: string 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (30#1) [D:/App/Xilinx2019/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+WARNING: [Synth 8-3848] Net ethernet_tx_data in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:271]
+WARNING: [Synth 8-3848] Net ethernet_tx_keep in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:272]
+WARNING: [Synth 8-3848] Net ethernet_tx_last in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:274]
+WARNING: [Synth 8-3848] Net ethernet_tx_valid in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:273]
+WARNING: [Synth 8-3848] Net ethernet_rx_ready in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:280]
+WARNING: [Synth 8-3848] Net ROD_command_FEB1 in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:310]
+WARNING: [Synth 8-3848] Net ROD_command_FEB2 in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:310]
+WARNING: [Synth 8-3848] Net ROD_command_FEB3 in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:310]
+WARNING: [Synth 8-3848] Net ROD_command_FEB4 in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:310]
+WARNING: [Synth 8-3848] Net ROD_command_FEB5 in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:310]
+WARNING: [Synth 8-3848] Net ROD_command_FEB6 in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:310]
+WARNING: [Synth 8-3848] Net Trigger_FEB1_o in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:311]
+WARNING: [Synth 8-3848] Net Trigger_FEB2_o in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:311]
+WARNING: [Synth 8-3848] Net Trigger_FEB3_o in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:311]
+WARNING: [Synth 8-3848] Net Trigger_FEB4_o in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:311]
+WARNING: [Synth 8-3848] Net Trigger_FEB5_o in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:311]
+WARNING: [Synth 8-3848] Net Trigger_FEB6_o in module/entity Top does not have driver. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:311]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (31#1) [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/Top.v:23]
+WARNING: [Synth 8-3917] design Top has port SFP_tx0_disable driven by constant 1
+WARNING: [Synth 8-3917] design Top has port SFP_tx1_disable driven by constant 1
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_control has unconnected port tx_axis_tready
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[47]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[46]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[45]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[44]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[43]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[42]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[41]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[40]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[39]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[38]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[37]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[36]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[35]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[34]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[33]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[32]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[31]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[30]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[29]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[28]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[27]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[26]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[25]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[24]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[23]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[22]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[21]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[20]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[19]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[18]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[17]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[16]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[15]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[14]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[13]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[12]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[11]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[10]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[9]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[8]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[7]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[6]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[5]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[4]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[3]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[2]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[1]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_arp_request has unconnected port arp_src_mac[0]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_axi_lite_sm has unconnected port s_axi_bresp[1]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_axi_lite_sm has unconnected port s_axi_bresp[0]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_axi_lite_sm has unconnected port s_axi_rresp[1]
+WARNING: [Synth 8-3331] design axi_10g_ethernet_0_axi_lite_sm has unconnected port s_axi_rresp[0]
+WARNING: [Synth 8-3331] design Top has unconnected port External_Trigger
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1116.363 ; gain = 323.285
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1116.363 ; gain = 323.285
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1116.363 ; gain = 323.285
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.247 . Memory (MB): peak = 1116.363 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/123/Documents/xilinx_project/STAR/STAR.srcs/sources_1/ip/GTX_ROD_Link/GTX_ROD_Link/GTX_ROD_Link_in_context.xdc] for cell 'GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i'
+Finished Parsing XDC File [c:/Users/123/Documents/xilinx_project/STAR/STAR.srcs/sources_1/ip/GTX_ROD_Link/GTX_ROD_Link/GTX_ROD_Link_in_context.xdc] for cell 'GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i'
+Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/axi_10g_ethernet_0/axi_10g_ethernet_0/axi_10g_ethernet_0_in_context.xdc] for cell 'Ethernet_10G_inst/fifo_block_i/ethernet_core_i'
+Finished Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/axi_10g_ethernet_0/axi_10g_ethernet_0/axi_10g_ethernet_0_in_context.xdc] for cell 'Ethernet_10G_inst/fifo_block_i/ethernet_core_i'
+Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clock_generator_inst'
+Finished Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clock_generator_inst'
+Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_example_design.xdc]
+Finished Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_example_design.xdc]
+Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/constrs_1/new/Top.xdc]
+WARNING: [Constraints 18-619] A clock with name 'ethernet_refclk_in_p' already exists, overwriting the previous clock with the same name. [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/constrs_1/new/Top.xdc:219]
+Finished Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/constrs_1/new/Top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/constrs_1/new/Top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1261.988 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 18 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1261.988 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'Ethernet_10G_inst/fifo_block_i/ethernet_core_i' at clock pin 'areset_datapathclk_out' is different from the actual clock period '6.400', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1263.012 ; gain = 469.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1263.012 ; gain = 469.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for ethernet_refclk_in_n. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/axi_10g_ethernet_0/axi_10g_ethernet_0/axi_10g_ethernet_0_in_context.xdc, line 202).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ethernet_refclk_in_n. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/axi_10g_ethernet_0/axi_10g_ethernet_0/axi_10g_ethernet_0_in_context.xdc, line 203).
+Applied set_property IO_BUFFER_TYPE = NONE for ethernet_refclk_in_p. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/axi_10g_ethernet_0/axi_10g_ethernet_0/axi_10g_ethernet_0_in_context.xdc, line 204).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ethernet_refclk_in_p. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/axi_10g_ethernet_0/axi_10g_ethernet_0/axi_10g_ethernet_0_in_context.xdc, line 205).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK_OnBoard_n. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_OnBoard_n. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK_OnBoard_p. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_OnBoard_p. (constraint file  C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/.Xil/Vivado-20032-DESKTOP-4V0BJ5M/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 9).
+Applied set_property DONT_TOUCH = true for GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ethernet_10G_inst/fifo_block_i/ethernet_core_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for clock_generator_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1263.012 ; gain = 469.934
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:314]
+INFO: [Synth 8-802] inferred FSM for state register 'rd_state_reg' in module 'axi_10g_ethernet_0_axi_fifo'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/imports/axi_10g_ethernet_0_axi_fifo.v:314]
+INFO: [Synth 8-802] inferred FSM for state register 'rd_state_reg' in module 'axi_10g_ethernet_0_axi_fifo__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'axi_state_reg' in module 'axi_10g_ethernet_0_axi_lite_sm'
+INFO: [Synth 8-802] inferred FSM for state register 'mdio_access_sm_reg' in module 'axi_10g_ethernet_0_axi_lite_sm'
+INFO: [Synth 8-5587] ROM size for "start_mdio" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_10g_ethernet_0_arp_parser'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                              000 |                              000
+                  iSTATE |                              100 |                              001
+                 iSTATE0 |                              011 |                              010
+                 iSTATE3 |                              010 |                              011
+                 iSTATE1 |                              001 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encoding 'sequential' in module 'axi_10g_ethernet_0_axi_fifo'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                              000 |                              000
+                  iSTATE |                              100 |                              001
+                 iSTATE3 |                              010 |                              010
+                 iSTATE0 |                              011 |                              011
+                 iSTATE1 |                              001 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encoding 'sequential' in module 'axi_10g_ethernet_0_axi_fifo__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0010 |                               00
+                SET_DATA |                             1000 |                               01
+                    INIT |                             0100 |                               10
+                    POLL |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mdio_access_sm_reg' using encoding 'one-hot' in module 'axi_10g_ethernet_0_axi_lite_sm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 STARTUP |                             0000 |                            00000
+            RESET_MAC_RX |                             0001 |                            00010
+            RESET_MAC_TX |                             0010 |                            00001
+             MDIO_ADDR_1 |                             0011 |                            00111
+     MDIO_READ_PCS_RESET |                             0100 |                            01100
+MDIO_READ_PCS_RESET_POLL |                             0101 |                            01101
+MDIO_READ_PCS_RESET_READ |                             0110 |                            01110
+        MDIO_RESET_CHECK |                             0111 |                            01111
+             MDIO_ADDR_2 |                             1000 |                            01000
+                 MDIO_WR |                             1001 |                            00110
+               MDIO_RD_1 |                             1010 |                            00101
+               MDIO_ADDR |                             1011 |                            00011
+                 MDIO_RD |                             1100 |                            00100
+         MDIO_POLL_CHECK |                             1101 |                            01001
+         MDIO_CHECK_DATA |                             1110 |                            01010
+             CONFIG_DONE |                             1111 |                            01011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'axi_state_reg' using encoding 'sequential' in module 'axi_10g_ethernet_0_axi_lite_sm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                ARP_HEAD |                              001 |                              001
+                      OP |                              010 |                              010
+                  MAC_IP |                              011 |                              011
+                    DATA |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_10g_ethernet_0_arp_parser'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1263.012 ; gain = 469.934
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |RODlink_Data_Decode   |           6|     10194|
+|2     |GTX_ROD_Datalink__GC0 |           1|      2937|
+|3     |Top__GC0              |           1|      5348|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 4     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 432   
+	  16 Input      1 Bit         XORs := 12    
+	  17 Input      1 Bit         XORs := 24    
+	  18 Input      1 Bit         XORs := 12    
+	   2 Input      1 Bit         XORs := 38    
++---Registers : 
+	               68 Bit    Registers := 2     
+	               64 Bit    Registers := 7     
+	               58 Bit    Registers := 12    
+	               48 Bit    Registers := 4     
+	               40 Bit    Registers := 30    
+	               36 Bit    Registers := 18    
+	               32 Bit    Registers := 40    
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 12    
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 23    
+	                4 Bit    Registers := 32    
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 198   
++---RAMs : 
+	              68K Bit         RAMs := 2     
++---Muxes : 
+	   8 Input     64 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     48 Bit        Muxes := 4     
+	   5 Input     48 Bit        Muxes := 1     
+	   3 Input     40 Bit        Muxes := 6     
+	   2 Input     40 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 7     
+	   4 Input     32 Bit        Muxes := 1     
+	  16 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 6     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 6     
+	   2 Input     10 Bit        Muxes := 3     
+	   8 Input      8 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 4     
+	  10 Input      6 Bit        Muxes := 6     
+	   2 Input      6 Bit        Muxes := 246   
+	  16 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 18    
+	   3 Input      4 Bit        Muxes := 6     
+	   4 Input      4 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 6     
+	   5 Input      3 Bit        Muxes := 5     
+	   3 Input      2 Bit        Muxes := 6     
+	   4 Input      2 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 6     
+	  16 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 143   
+	  39 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 19    
+	   8 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module RODlink_Data_Decode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 36    
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 4     
+	               36 Bit    Registers := 3     
+	               32 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	  10 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 41    
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	  39 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module GTX_ROD_Link_common_reset 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module RODlink_Data_Encode__1 
+Detailed RTL Component Info : 
++---XORs : 
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module RODlink_Data_Encode__2 
+Detailed RTL Component Info : 
++---XORs : 
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module RODlink_Data_Encode__3 
+Detailed RTL Component Info : 
++---XORs : 
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module RODlink_Data_Encode__4 
+Detailed RTL Component Info : 
++---XORs : 
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module RODlink_Data_Encode__5 
+Detailed RTL Component Info : 
++---XORs : 
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module RODlink_Data_Encode 
+Detailed RTL Component Info : 
++---XORs : 
+	  16 Input      1 Bit         XORs := 1     
+	  17 Input      1 Bit         XORs := 2     
+	  18 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               58 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module GTX_ROD_Datalink 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 30    
+Module PowerOnReset 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_reset__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+Module axi_10g_ethernet_0_sync_reset__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+Module axi_10g_ethernet_0_sync_block__12 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_fifo_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               68 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---RAMs : 
+	              68K Bit         RAMs := 1     
+Module axi_10g_ethernet_0_sync_block__13 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__14 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__15 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__16 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__17 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__18 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__19 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__20 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__21 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_axi_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 19    
++---Registers : 
+	               64 Bit    Registers := 2     
+	               10 Bit    Registers := 6     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 10    
+	   5 Input      1 Bit        Muxes := 1     
+Module axi_10g_ethernet_0_sync_reset__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+Module axi_10g_ethernet_0_sync_reset__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+Module axi_10g_ethernet_0_sync_block__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_fifo_ram__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               68 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---RAMs : 
+	              68K Bit         RAMs := 1     
+Module axi_10g_ethernet_0_sync_block__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__8 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__9 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__10 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_sync_block__11 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module axi_10g_ethernet_0_axi_fifo__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 19    
++---Registers : 
+	               64 Bit    Registers := 2     
+	               10 Bit    Registers := 6     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 1     
+Module axi_10g_ethernet_0_axi_lite_sm 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	               17 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 21    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 1     
+	  16 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 6     
+	   2 Input     10 Bit        Muxes := 1     
+	  16 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	  16 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 24    
+	   4 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 19    
+Module axi_10g_ethernet_0_arp_parser 
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 3     
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 4     
+	   5 Input     48 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 5     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 14    
+	   5 Input      1 Bit        Muxes := 6     
+Module axi_10g_ethernet_0_arp_reply 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	               48 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   8 Input     64 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   8 Input      1 Bit        Muxes := 3     
+Module axi_10g_ethernet_0_arp_request 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   8 Input     64 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   8 Input      1 Bit        Muxes := 3     
+Module axi_10g_ethernet_0_arp_control 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_10g_ethernet_0_sync_reset 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design Top has port SFP_tx0_disable driven by constant 1
+WARNING: [Synth 8-3917] design Top has port SFP_tx1_disable driven by constant 1
+WARNING: [Synth 8-3331] design Top has unconnected port External_Trigger
+INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/ram_reg to conserve power
+INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/fifo_ram_inst/ram_reg to conserve power
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_in_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB1_inst/data_valid_r_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_in_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB2_inst/data_valid_r_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_in_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB3_inst/data_valid_r_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (GTX_ROD_Datalink_insti_1/\GTX_Data_Encode_FEB4_inst/data_in_r_reg[0] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[0]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[1]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[2]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[3]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[4]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[5]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[6]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[7]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[8]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[9]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[10]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[11]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[12]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[13]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[14]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[15]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[16]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[17]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[18]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[19]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[20]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[21]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[22]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[23]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[24]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[25]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[26]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[27]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[28]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[29]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[30]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB1_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[0]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[1]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[2]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[3]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[4]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[5]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[6]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[7]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[8]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[9]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[10]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[11]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[12]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[13]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[14]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[15]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[16]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[17]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[18]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[19]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[20]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[21]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[22]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[23]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[24]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[25]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[26]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[27]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[28]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[29]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[30]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB2_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[0]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[1]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[2]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[3]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[4]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[5]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[6]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[7]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[8]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[9]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[10]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[11]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[12]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[13]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[14]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[15]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[16]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[17]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[18]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[19]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[20]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[21]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[22]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[23]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[24]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[25]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[26]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[27]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[28]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[29]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[30]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB3_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[0]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[1]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[2]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[3]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[4]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[5]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Synth 8-3886] merging instance 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[6]' (FDR) to 'GTX_ROD_Datalink_insti_1/GTX_Data_Encode_FEB4_inst/data_buffer_CRC_reg[31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_reply/state_reg[3]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_reply/state_reg[2]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_reply/state_reg[1]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_reply/state_reg[0]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:75]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_reply/arp_reply_en_reg/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:86]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_reply.v:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/exist_flag_reg__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:72]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/arp_request_en_reg__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:114]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:114]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:114]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/arp_request_done_reg__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:113]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:113]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:113]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/state_reg[3]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/state_reg[2]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/state_reg[1]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/state_reg[0]__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:115]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/Ethernet_10G_inst/arp_block/arp_generator/arp_request/list_index_reg__0/Q' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:71]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:71]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.srcs/sources_1/new/axi_10g_ethernet_0_arp_request.v:71]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+---------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                                                                            | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Top         | Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/ram_reg    | 1 K x 68(READ_FIRST)   | W |   | 1 K x 68(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 
+|Top         | Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/fifo_ram_inst/ram_reg | 1 K x 68(READ_FIRST)   | W |   | 1 K x 68(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 
++------------+---------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |RODlink_Data_Decode   |           6|      5443|
+|2     |GTX_ROD_Datalink__GC0 |           1|       618|
+|3     |Top__GC0              |           1|      2265|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'ethernet_refclk_in_p'
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+---------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                                                                            | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Top         | Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/ram_reg    | 1 K x 68(READ_FIRST)   | W |   | 1 K x 68(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 
+|Top         | Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/fifo_ram_inst/ram_reg | 1 K x 68(READ_FIRST)   | W |   | 1 K x 68(WRITE_FIRST)  |   | R | Port A and B     | 0      | 2      | 
++------------+---------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |RODlink_Data_Decode |           6|      5443|
+|2     |Top_GT0             |           1|      2172|
++------+--------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7053] The timing for the instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/ram_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/fifo_ram_inst/ram_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:02 ; elapsed = 00:01:07 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt_txfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt_txfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt0_rxfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt0_rxfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt1_rxfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt1_rxfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt2_rxfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt2_rxfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt3_rxfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt3_rxfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt4_rxfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt4_rxfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt5_rxfsmresetdone_r_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin GTX_ROD_Datalink_inst/gt5_rxfsmresetdone_r2_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin arp_parse/des_ip_inferred:in0[0] to constant 0
+INFO: [Synth 8-4560] design has 13 instantiated BUFGs while the limit set by the -bufg synthesis option is 12
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:14 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:01:14 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-------------------+----------+
+|      |BlackBox name      |Instances |
++------+-------------------+----------+
+|1     |clk_wiz_0          |         1|
+|2     |axi_10g_ethernet_0 |         1|
+|3     |GTX_ROD_Link       |         1|
++------+-------------------+----------+
+
+Report Cell Usage: 
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |GTX_ROD_Link       |     1|
+|2     |axi_10g_ethernet_0 |     1|
+|3     |clk_wiz_0          |     1|
+|4     |BUFG               |    13|
+|5     |CARRY4             |    17|
+|6     |GTXE2_COMMON       |     3|
+|7     |IBUFDS_GTE2        |     1|
+|8     |LUT1               |    69|
+|9     |LUT2               |   463|
+|10    |LUT3               |   601|
+|11    |LUT4               |   339|
+|12    |LUT5               |   523|
+|13    |LUT6               |  4992|
+|14    |RAMB36E1           |     3|
+|15    |RAMB36E1_1         |     1|
+|16    |FDCE               |    30|
+|17    |FDPE               |    25|
+|18    |FDRE               |  3099|
+|19    |FDSE               |   205|
+|20    |IBUF               |    20|
+|21    |IBUFDS             |     6|
+|22    |OBUF               |    20|
+|23    |OBUFDS             |    18|
++------+-------------------+------+
+
+Report Instance Areas: 
++------+----------------------------------------+--------------------------------------------+------+
+|      |Instance                                |Module                                      |Cells |
++------+----------------------------------------+--------------------------------------------+------+
+|1     |top                                     |                                            | 11159|
+|2     |  Ethernet_10G_inst                     |axi_10g_ethernet_0_example_design           |  1533|
+|3     |    axi_lite_controller                 |axi_10g_ethernet_0_axi_lite_sm              |   248|
+|4     |    arp_block                           |axi_10g_ethernet_0_arp_block                |   365|
+|5     |      arp_parse                         |axi_10g_ethernet_0_arp_parser               |   365|
+|6     |    fifo_block_i                        |axi_10g_ethernet_0_fifo_block               |   911|
+|7     |      ethernet_mac_fifo_i               |axi_10g_ethernet_0_xgmac_fifo               |   711|
+|8     |        i_tx_fifo                       |axi_10g_ethernet_0_axi_fifo                 |   241|
+|9     |          rd_store_sync                 |axi_10g_ethernet_0_sync_block__12           |     5|
+|10    |          \GRAY_SYNC[0].sync_gray_addr  |axi_10g_ethernet_0_sync_block__13           |     5|
+|11    |          \GRAY_SYNC[1].sync_gray_addr  |axi_10g_ethernet_0_sync_block__14           |     5|
+|12    |          \GRAY_SYNC[2].sync_gray_addr  |axi_10g_ethernet_0_sync_block__15           |     5|
+|13    |          \GRAY_SYNC[3].sync_gray_addr  |axi_10g_ethernet_0_sync_block__16           |     5|
+|14    |          \GRAY_SYNC[4].sync_gray_addr  |axi_10g_ethernet_0_sync_block__17           |     5|
+|15    |          \GRAY_SYNC[5].sync_gray_addr  |axi_10g_ethernet_0_sync_block__18           |     5|
+|16    |          \GRAY_SYNC[6].sync_gray_addr  |axi_10g_ethernet_0_sync_block__19           |     5|
+|17    |          \GRAY_SYNC[7].sync_gray_addr  |axi_10g_ethernet_0_sync_block__20           |     5|
+|18    |          \GRAY_SYNC[8].sync_gray_addr  |axi_10g_ethernet_0_sync_block__21           |     5|
+|19    |          \GRAY_SYNC[9].sync_gray_addr  |axi_10g_ethernet_0_sync_block               |     5|
+|20    |          fifo_ram_inst                 |axi_10g_ethernet_0_fifo_ram_9               |    13|
+|21    |          rd_reset_gen                  |axi_10g_ethernet_0_sync_reset_10            |     9|
+|22    |          wr_reset_gen                  |axi_10g_ethernet_0_sync_reset_11            |     6|
+|23    |        rx_fifo_inst                    |axi_10g_ethernet_0_axi_fifo__parameterized0 |   470|
+|24    |          rd_store_sync                 |axi_10g_ethernet_0_sync_block__1            |     5|
+|25    |          \GRAY_SYNC[0].sync_gray_addr  |axi_10g_ethernet_0_sync_block__2            |     5|
+|26    |          \GRAY_SYNC[1].sync_gray_addr  |axi_10g_ethernet_0_sync_block__3            |     5|
+|27    |          \GRAY_SYNC[2].sync_gray_addr  |axi_10g_ethernet_0_sync_block__4            |     5|
+|28    |          \GRAY_SYNC[3].sync_gray_addr  |axi_10g_ethernet_0_sync_block__5            |     5|
+|29    |          \GRAY_SYNC[4].sync_gray_addr  |axi_10g_ethernet_0_sync_block__6            |     5|
+|30    |          \GRAY_SYNC[5].sync_gray_addr  |axi_10g_ethernet_0_sync_block__7            |     5|
+|31    |          \GRAY_SYNC[6].sync_gray_addr  |axi_10g_ethernet_0_sync_block__8            |     5|
+|32    |          \GRAY_SYNC[7].sync_gray_addr  |axi_10g_ethernet_0_sync_block__9            |     5|
+|33    |          \GRAY_SYNC[8].sync_gray_addr  |axi_10g_ethernet_0_sync_block__10           |     5|
+|34    |          \GRAY_SYNC[9].sync_gray_addr  |axi_10g_ethernet_0_sync_block__11           |     5|
+|35    |          fifo_ram_inst                 |axi_10g_ethernet_0_fifo_ram                 |    94|
+|36    |          rd_reset_gen                  |axi_10g_ethernet_0_sync_reset_7             |     9|
+|37    |          wr_reset_gen                  |axi_10g_ethernet_0_sync_reset_8             |     9|
+|38    |    tx_s_axis_reset_gen                 |axi_10g_ethernet_0_sync_reset               |     8|
+|39    |  GTX_ROD_Datalink_inst                 |GTX_ROD_Datalink                            |  9526|
+|40    |    GTX_Data_Decode_FEB1_inst           |RODlink_Data_Decode                         |  1486|
+|41    |    GTX_Data_Decode_FEB2_inst           |RODlink_Data_Decode_0                       |  1486|
+|42    |    GTX_Data_Decode_FEB3_inst           |RODlink_Data_Decode_1                       |  1486|
+|43    |    GTX_Data_Decode_FEB4_inst           |RODlink_Data_Decode_2                       |  1486|
+|44    |    GTX_Data_Decode_FEB5_inst           |RODlink_Data_Decode_3                       |  1486|
+|45    |    GTX_Data_Decode_FEB6_inst           |RODlink_Data_Decode_4                       |  1486|
+|46    |    GTX_ROD_Link_support_i              |GTX_ROD_Link_support                        |   565|
+|47    |      common0_i                         |GTX_ROD_Link_common                         |     1|
+|48    |      common1_i                         |GTX_ROD_Link_common_5                       |     1|
+|49    |      common2_i                         |GTX_ROD_Link_common_6                       |     1|
+|50    |      common_reset_i                    |GTX_ROD_Link_common_reset                   |    30|
+|51    |      gt_usrclk_source                  |GTX_ROD_Link_GT_USRCLK_SOURCE               |    13|
+|52    |  PowerOnReset_inst                     |PowerOnReset                                |    32|
++------+----------------------------------------+--------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 1452.238 ; gain = 659.160
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 39 critical warnings and 50 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:08 . Memory (MB): peak = 1452.238 ; gain = 512.512
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 1452.238 ; gain = 659.160
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.136 . Memory (MB): peak = 1452.238 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 45 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1452.238 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 18 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+396 Infos, 165 Warnings, 39 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:21 . Memory (MB): peak = 1452.238 ; gain = 994.117
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1452.238 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/synth_1/Top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 22 18:41:14 2025...

@@ -98,7 +98,7 @@ reg [1:0] icmp_cnt;
 reg [63:0] arp_head;
 reg [47:0] arp_src_mac;
 reg [31:0] arp_src_ip;*/
-
+/*
 function automatic [32-1:0] swap_endian_32;
     input reg [32-1:0] value;
     integer i;
@@ -251,7 +251,7 @@ always @(posedge aclk) begin
         end
     end
 end
-
+*/
 /*always @(mux_select or tdata0 or tvalid0 or tlast0 or tdata1 or tkeep0 or tkeep1 or
          tvalid1 or tlast1)
 begin

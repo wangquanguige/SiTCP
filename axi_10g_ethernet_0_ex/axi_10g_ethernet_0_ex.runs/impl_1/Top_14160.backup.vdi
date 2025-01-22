@@ -1,0 +1,1199 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Jan 22 15:56:41 2025
+# Process ID: 14160
+# Current directory: C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1
+# Command line: vivado.exe -log Top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Top.tcl -notrace
+# Log file: C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top.vdi
+# Journal file: C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Top.tcl -notrace
+Command: open_checkpoint C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 299.863 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.369 . Memory (MB): peak = 800.578 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 462 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1479.160 ; gain = 4.938
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1479.160 ; gain = 4.938
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1479.160 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 55 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 18 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 37 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2019.2 (64-bit) build 2708876
+open_checkpoint: Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1479.160 ; gain = 1179.297
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/123/Documents/xilinx_project/GitHub/Ethernet/ip_repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/App/Xilinx2019/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.cache/ip 
+Sourcing Tcl File [c:/Users/123/Documents/xilinx_project/STAR/STAR.srcs/sources_1/ip/GTX_ROD_Link/tcl/v7ht.tcl]
+
+****************************************************************************************
+*  WARNING: This script only supports the xc7vh290t, xc7vh580t and xc7vh870t devices.  *
+*           Your current part is xc7k325t.                                            *
+****************************************************************************************
+
+Finished Sourcing Tcl File [c:/Users/123/Documents/xilinx_project/STAR/STAR.srcs/sources_1/ip/GTX_ROD_Link/tcl/v7ht.tcl]
+read_xdc: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1484.129 ; gain = 3.941
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.990 . Memory (MB): peak = 1496.312 ; gain = 9.051
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1244911fa
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.842 . Memory (MB): peak = 1596.195 ; gain = 99.883
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_0 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_0_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_1 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_1_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_2 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_2_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_3 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_3_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_4 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_4_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_5 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_5_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_6 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_6_CV.
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.311 . Memory (MB): peak = 2004.672 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 1517c3c56
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:10:38 . Memory (MB): peak = 2004.672 ; gain = 211.953
+
+Phase 2 Retarget
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 4 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: ff97bc86
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:10:40 . Memory (MB): peak = 2004.672 ; gain = 211.953
+INFO: [Opt 31-389] Phase Retarget created 75 cells and removed 121 cells
+INFO: [Opt 31-1021] In phase Retarget, 219 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: 199d86a4e
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:10:40 . Memory (MB): peak = 2004.672 ; gain = 211.953
+INFO: [Opt 31-389] Phase Constant propagation created 27 cells and removed 181 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 99 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+Phase 4 Sweep | Checksum: 166221dc8
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:10:44 . Memory (MB): peak = 2004.672 ; gain = 211.953
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 9724 cells
+INFO: [Opt 31-1021] In phase Sweep, 3857 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+INFO: [Opt 31-274] Optimized connectivity to 1 cascaded buffer cells
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common MMCM/DPLL/XPLL driver.
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common driver.
+INFO: [Opt 31-1092] Phase BUFG optimization transformed 0 BUFG(s) to MBUFG(s).
+Phase 5 BUFG optimization | Checksum: b88da90e
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:10:45 . Memory (MB): peak = 2004.672 ; gain = 211.953
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 1 cells.
+
+Phase 6 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 6 Shift Register Optimization | Checksum: b88da90e
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:10:45 . Memory (MB): peak = 2004.672 ; gain = 211.953
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 1332ef3eb
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:10:46 . Memory (MB): peak = 2004.672 ; gain = 211.953
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 108 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              75  |             121  |                                            219  |
+|  Constant propagation         |              27  |             181  |                                             99  |
+|  Sweep                        |               0  |            9724  |                                           3857  |
+|  BUFG optimization            |               0  |               1  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            108  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 2004.672 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 14a839f76
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:10:46 . Memory (MB): peak = 2004.672 ; gain = 211.953
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.646 | TNS=-1902.217 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 8 BRAM(s) out of a total of 13 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 9 newly gated: 0 Total Ports: 26
+Ending PowerOpt Patch Enables Task | Checksum: 17399b1e1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.205 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 17399b1e1
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 2319.242 ; gain = 314.570
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 17399b1e1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 15aa6ba1c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+84 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:47 ; elapsed = 00:11:00 . Memory (MB): peak = 2319.242 ; gain = 835.113
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file Top_drc_opted.rpt -pb Top_drc_opted.pb -rpx Top_drc_opted.rpx
+Command: report_drc -file Top_drc_opted.rpt -pb Top_drc_opted.pb -rpx Top_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: f9c7291b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1450d527c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 199d88d82
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 199d88d82
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 199d88d82
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1d599733e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1018] Found 752 candidate LUT instances to create LUTNM shape
+INFO: [Physopt 32-775] End 1 Pass. Optimized 311 nets or cells. Created 16 new cells, deleted 295 existing cells and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           16  |            295  |                   311  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           16  |            295  |                   311  |           0  |           7  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 24391b4c4
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:36 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 2.2 Global Placement Core | Checksum: 1acaeebd9
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:36 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1acaeebd9
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:36 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1b67c0c2e
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:38 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 23629fa55
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:41 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 2768f04f1
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:41 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 2029908bb
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:41 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 18479b560
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:46 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+
+Phase 3.6.1 Place Remaining
+Phase 3.6.1 Place Remaining | Checksum: 22833aff0
+
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:57 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 3.6 Small Shape Detail Placement | Checksum: 22833aff0
+
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:57 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 215c48e55
+
+Time (s): cpu = 00:01:31 ; elapsed = 00:00:59 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 16ac0bc59
+
+Time (s): cpu = 00:01:31 ; elapsed = 00:00:59 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: ebdcdd22
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:07 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: ebdcdd22
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:07 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: ac2656ef
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: ac2656ef
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:01:13 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-4.665. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 20003c4e8
+
+Time (s): cpu = 00:02:22 ; elapsed = 00:01:47 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 20003c4e8
+
+Time (s): cpu = 00:02:22 ; elapsed = 00:01:47 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 20003c4e8
+
+Time (s): cpu = 00:02:22 ; elapsed = 00:01:47 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 20003c4e8
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:47 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 29b159f24
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:48 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 29b159f24
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:48 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Ending Placer Task | Checksum: 1a2566a3c
+
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:48 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+119 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:27 ; elapsed = 00:01:50 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_io -file Top_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.134 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file Top_utilization_placed.rpt -pb Top_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file Top_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.696 | TNS=-1926.178 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1049d9714
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.696 | TNS=-1926.178 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 1049d9714
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.696 | TNS=-1926.178 |
+INFO: [Physopt 32-663] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[36].  Re-placed instance u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[18]
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[36]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.679 | TNS=-1926.021 |
+INFO: [Physopt 32-663] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[84].  Re-placed instance u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[42]
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[84]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.672 | TNS=-1925.878 |
+INFO: [Physopt 32-663] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[38].  Re-placed instance u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[19]
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[38]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.665 | TNS=-1925.763 |
+INFO: [Physopt 32-662] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][14]_srl8_n_0.  Did not re-place instance u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][14]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][14]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.661 | TNS=-1925.592 |
+INFO: [Physopt 32-663] Processed net u_ila_4/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[60].  Re-placed instance u_ila_4/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[30]
+INFO: [Physopt 32-735] Processed net u_ila_4/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[60]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.660 | TNS=-1925.460 |
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[18]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net u_ila_3/inst/ila_core_inst/probe_data[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1925.303 |
+INFO: [Physopt 32-662] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0.  Did not re-place instance u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[9].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/op_code_reg[9]
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[6].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/src_ip_reg[6]
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[3].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/des_mac_reg[3]
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[3] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0.  Did not re-place instance u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[6].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/rx_type_reg[6]
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[6] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[0].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[0]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1925.482 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[1].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[1]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1925.775 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[3].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[3]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1925.932 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[4].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[4]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1926.195 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[7].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[7]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1926.199 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[9]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1926.363 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[15].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[15]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.438 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[52].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[52]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[52]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.322 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[53].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[53]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[53]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.206 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[54].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[54]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[54]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.090 |
+INFO: [Physopt 32-662] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0.  Did not re-place instance u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[9].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/op_code_reg[9]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[6].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/src_ip_reg[6]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[3].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/des_mac_reg[3]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0.  Did not re-place instance u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[6].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/rx_type_reg[6]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[56].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[56]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[56]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.974 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[2].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[2]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.927 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[6].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[6]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.230 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[22].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[22]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[22]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.137 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[23].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[23]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[23]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1939.044 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[24].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[24]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[24]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.977 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[25].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[25]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[25]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.910 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[26].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[26]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[26]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.845 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[27].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[27]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[27]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.780 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[6].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[6]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.715 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/s_axis_tx_tlast.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tlast_reg
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/s_axis_tx_tlast. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1945.343 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[48].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[48]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[48]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1945.312 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[50].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[50]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[50]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1945.280 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[55].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[55]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[55]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1945.248 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[7].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata_reg[7]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/Q[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1945.215 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[1].  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[1]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int_reg
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.914 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int_reg
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_INST_0
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata0.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tlast_i_1
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ethernet_refclk_in_p. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.914 |
+Phase 3 Critical Path Optimization | Checksum: 1049d9714
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 2319.242 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.658 | TNS=-1938.914 |
+INFO: [Physopt 32-662] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0.  Did not re-place instance u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.656 | TNS=-1938.775 |
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.653 | TNS=-1938.608 |
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.649 | TNS=-1938.485 |
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][5]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][5]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][5]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.645 | TNS=-1938.365 |
+INFO: [Physopt 32-663] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[74].  Re-placed instance u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[37]
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[74]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.645 | TNS=-1938.247 |
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][4]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][4]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][4]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.637 | TNS=-1938.096 |
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][20]_srl8_n_0.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][20]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][20]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.632 | TNS=-1938.115 |
+INFO: [Physopt 32-663] Processed net u_ila_4/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[48].  Re-placed instance u_ila_4/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[24]
+INFO: [Physopt 32-735] Processed net u_ila_4/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[48]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.626 | TNS=-1938.001 |
+INFO: [Physopt 32-663] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[48].  Re-placed instance u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[24]
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[48]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.624 | TNS=-1937.912 |
+INFO: [Physopt 32-662] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0.  Did not re-place instance u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.623 | TNS=-1937.808 |
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/probe_data[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1937.757 |
+INFO: [Physopt 32-662] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0.  Did not re-place instance u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[9].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/rx_type_reg[9]
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net rx_type[9] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_n_0.  Did not re-place instance u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[2].  Re-placed instance Ethernet_10G_inst/arp_block/arp_parse/op_code_reg[2]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1937.642 |
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net u_ila_1/inst/ila_core_inst/probe_data[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1937.599 |
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[2].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/des_mac_reg[2]
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net des_mac[2] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/srlopt_n_3.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][16]_srl8_srlopt
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/srlopt_n_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[16] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[16].  Re-placed instance Ethernet_10G_inst/arp_block/arp_parse/src_ip_reg[16]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[16]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1937.519 |
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/srlopt_n_2.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][20]_srl8_srlopt
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/srlopt_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[20].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/src_ip_reg[20]
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net src_ip[20] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8_n_0.  Did not re-place instance u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[11].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/op_code_reg[11]
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-712] Optimization is not feasible on net op_code[11] due to MARK_DEBUG attribute.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[1].  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[1]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tkeep_reg[7]_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int_reg
+INFO: [Physopt 32-572] Net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_INST_0
+INFO: [Physopt 32-710] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tdata0. Critical path length was reduced through logic transformation on cell Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_axis_tlast_i_1_comp.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1917.444 |
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/D[36]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_INST_0
+INFO: [Physopt 32-710] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_reset_gen/rd_avail_reg. Critical path length was reduced through logic transformation on cell Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_reset_gen/ram_reg_0_i_1_comp.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1917.601 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error_reg
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1918.103 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[2].  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[2]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1917.785 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg
+INFO: [Physopt 32-81] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1917.541 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error_reg
+INFO: [Physopt 32-81] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1916.571 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error_reg
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1916.520 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0_repN.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_replica
+INFO: [Physopt 32-572] Net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/rx/rx_user/rx_axis_tlast_int_reg_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9]_i_3
+INFO: [Physopt 32-710] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9]_i_1_n_0. Critical path length was reduced through logic transformation on cell Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9]_i_1_comp.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1916.110 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[1].  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr_reg[1]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9]_i_3
+INFO: [Physopt 32-572] Net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/sof.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/ignore_frame_i_2
+INFO: [Physopt 32-710] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr1__6. Critical path length was reduced through logic transformation on cell Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_addr[9]_i_3_comp_2.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/sof. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1915.098 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error_reg
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/early_implicit_error. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_repN.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_INST_0_comp
+INFO: [Physopt 32-710] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_reset_gen/rd_avail_reg. Critical path length was reduced through logic transformation on cell Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_reset_gen/ram_reg_0_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.983 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg_n_0_[0].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[0]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg_n_0_[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.955 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_1_in25_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[1]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_1_in25_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.925 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_2_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[2]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_2_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.897 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_3_in27_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[3]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_3_in27_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.867 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_4_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[4]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_4_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.838 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_6_in31_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[6]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_6_in31_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.809 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_5_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[5]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_5_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.794 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_7_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[7]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_7_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.777 |
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_8_in.  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[8]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_8_in. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.772 |
+INFO: [Physopt 32-662] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0.  Did not re-place instance u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_3/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[9].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/rx_type_reg[9]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/rx_type[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_n_0.  Did not re-place instance u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_1/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[2].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/des_mac_reg[2]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/des_mac[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_4/inst/ila_core_inst/srlopt_n_2.  Did not re-place instance u_ila_4/inst/ila_core_inst/shifted_data_in_reg[7][20]_srl8_srlopt
+INFO: [Physopt 32-702] Processed net u_ila_4/inst/ila_core_inst/srlopt_n_2. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[20].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/src_ip_reg[20]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/src_ip[20]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8_n_0.  Did not re-place instance u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8
+INFO: [Physopt 32-702] Processed net u_ila_2/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[11].  Did not re-place instance Ethernet_10G_inst/arp_block/arp_parse/op_code_reg[11]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/arp_block/arp_parse/op_code[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg_n_0_[9].  Re-placed instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[9]
+INFO: [Physopt 32-735] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg_n_0_[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.767 |
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_8_in.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_addr_reg[8]
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/p_8_in. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int_reg
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_int. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready.  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready_INST_0
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/tx_axis_tready. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/E[0].  Did not re-place instance Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/rd_addr[9]_i_1
+INFO: [Physopt 32-702] Processed net Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/fifo_ram_inst/E[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ethernet_refclk_in_p. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.622 | TNS=-1914.767 |
+Phase 4 Critical Path Optimization | Checksum: 1049d9714
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-4.622 | TNS=-1914.767 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.074  |         11.411  |           10  |              0  |                    66  |           0  |           2  |  00:00:12  |
+|  Total          |          0.074  |         11.411  |           10  |              0  |                    66  |           0  |           3  |  00:00:12  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 1049d9714
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:18 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+525 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2319.242 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2319.242 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: ecfe78df ConstDB: 0 ShapeSum: ef9702cd RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 8f11fd32
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:31 . Memory (MB): peak = 2480.090 ; gain = 160.848
+Post Restoration Checksum: NetGraph: 665849df NumContArr: 28b9b353 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 8f11fd32
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:31 . Memory (MB): peak = 2480.090 ; gain = 160.848
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 8f11fd32
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:31 . Memory (MB): peak = 2481.734 ; gain = 162.492
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 8f11fd32
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:31 . Memory (MB): peak = 2481.734 ; gain = 162.492
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 202e153e4
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:46 . Memory (MB): peak = 2617.211 ; gain = 297.969
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.691 | TNS=-1905.790| WHS=-2.145 | THS=-1089.416|
+
+
+Phase 2.5 Update Timing for Bus Skew
+
+Phase 2.5.1 Update Timing
+Phase 2.5.1 Update Timing | Checksum: 215be660e
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 2617.211 ; gain = 297.969
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.691 | TNS=-1942.433| WHS=N/A    | THS=N/A    |
+
+Phase 2.5 Update Timing for Bus Skew | Checksum: 13f0b5c57
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 2617.211 ; gain = 297.969
+Phase 2 Router Initialization | Checksum: 1ff350d73
+
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:51 . Memory (MB): peak = 2617.211 ; gain = 297.969
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.41874e-05 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 24794
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 24792
+  Number of Partially Routed Nets     = 2
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1842ebbed
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:01:09 . Memory (MB): peak = 2649.711 ; gain = 330.469
+INFO: [Route 35-580] Design has 139 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       clk_out1_clk_wiz_0 |     ethernet_refclk_in_p |Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/bd_efdb_xpcs_0_local_clock_reset_block/sim_speedup_controller_inst/control_reg_reg/D|
+| Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/gtxe2_i/TXOUTCLK |     ethernet_refclk_in_p |Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_ifg/local_ifg_count_reg[0]/D|
+| Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/gtxe2_i/TXOUTCLK |     ethernet_refclk_in_p |Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/write_data_int_reg[30]/D|
+| Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/gtxe2_i/TXOUTCLK |     ethernet_refclk_in_p |Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/wr_state_reg[1]/D|
+| Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/gtxe2_i/TXOUTCLK |     ethernet_refclk_in_p |Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_sm/write_data_int_reg[32]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 2041
+ Number of Nodes with overlaps = 121
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.841 | TNS=-2090.494| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1c2aa210a
+
+Time (s): cpu = 00:03:00 ; elapsed = 00:02:07 . Memory (MB): peak = 2694.742 ; gain = 375.500
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.841 | TNS=-2075.290| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1947a01a7
+
+Time (s): cpu = 00:03:01 ; elapsed = 00:02:08 . Memory (MB): peak = 2694.742 ; gain = 375.500
+Phase 4 Rip-up And Reroute | Checksum: 1947a01a7
+
+Time (s): cpu = 00:03:01 ; elapsed = 00:02:08 . Memory (MB): peak = 2694.742 ; gain = 375.500
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1780b224a
+
+Time (s): cpu = 00:03:04 ; elapsed = 00:02:10 . Memory (MB): peak = 2694.742 ; gain = 375.500
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.841 | TNS=-2071.740| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1293d9dc9
+
+Time (s): cpu = 00:03:05 ; elapsed = 00:02:10 . Memory (MB): peak = 2694.742 ; gain = 375.500
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1293d9dc9
+
+Time (s): cpu = 00:03:05 ; elapsed = 00:02:10 . Memory (MB): peak = 2694.742 ; gain = 375.500
+Phase 5 Delay and Skew Optimization | Checksum: 1293d9dc9
+
+Time (s): cpu = 00:03:05 ; elapsed = 00:02:10 . Memory (MB): peak = 2694.742 ; gain = 375.500
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1326b896b
+
+Time (s): cpu = 00:03:09 ; elapsed = 00:02:12 . Memory (MB): peak = 2694.742 ; gain = 375.500
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.841 | TNS=-2103.123| WHS=-1.963 | THS=-131.628|
+
+Phase 6.1 Hold Fix Iter | Checksum: 21a76044f
+
+Time (s): cpu = 00:04:40 ; elapsed = 00:03:17 . Memory (MB): peak = 2768.160 ; gain = 448.918
+WARNING: [Route 35-468] The router encountered 265 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+	Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/i_tx_fifo/rd_reset_gen/reset_async0_reg/PRE
+	Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/rd_reset_gen/reset_async0_reg/PRE
+	Ethernet_10G_inst/fifo_block_i/ethernet_mac_fifo_i/rx_fifo_inst/wr_reset_gen/reset_async0_reg/PRE
+	PowerOnReset_inst/ethernet_core_i_i_1/I0
+	Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_config_sync/MAN_USED.custom_preamble_int_i_1/I0
+	Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_frame_size/frame_oversize_error_int_i_1/I0
+	Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_frame_size/min_frame_i_2/I0
+	Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_frame_size/poss_ifg_count[9]_i_2/I1
+	Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_frame_size/poss_ifg_count[9]_i_1/I2
+	Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xmac/inst/bd_efdb_xmac_0_core/tx/tx_ifg/dic_required[1]_i_1/I1
+	.. and 255 more pins.
+
+Phase 6 Post Hold Fix | Checksum: 16e882ac3
+
+Time (s): cpu = 00:04:40 ; elapsed = 00:03:17 . Memory (MB): peak = 2768.160 ; gain = 448.918
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.48068 %
+  Global Horizontal Routing Utilization  = 1.45415 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 67.5676%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 54.955%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 63.2353%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 55.8824%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 13ac78b7c
+
+Time (s): cpu = 00:04:40 ; elapsed = 00:03:17 . Memory (MB): peak = 2768.160 ; gain = 448.918
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 13ac78b7c
+
+Time (s): cpu = 00:04:40 ; elapsed = 00:03:17 . Memory (MB): peak = 2768.160 ; gain = 448.918
+
+Phase 9 Depositing Routes
+INFO: [Route 35-467] Router swapped GT pin GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/common0_i/gtxe2_common_i/GTREFCLK0 to physical pin GTXE2_COMMON_X0Y1/GTSOUTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/common2_i/gtxe2_common_i/GTREFCLK0 to physical pin GTXE2_COMMON_X0Y3/GTNORTHREFCLK1
+Phase 9 Depositing Routes | Checksum: d9fc4a2b
+
+Time (s): cpu = 00:04:43 ; elapsed = 00:03:20 . Memory (MB): peak = 2768.160 ; gain = 448.918
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 172349f88
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:03:22 . Memory (MB): peak = 2768.160 ; gain = 448.918
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-4.841 | TNS=-2334.453| WHS=0.054  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 172349f88
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:03:22 . Memory (MB): peak = 2768.160 ; gain = 448.918
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:03:22 . Memory (MB): peak = 2768.160 ; gain = 448.918
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+547 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:04:51 ; elapsed = 00:03:25 . Memory (MB): peak = 2768.160 ; gain = 448.918
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2768.160 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 2768.160 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 2768.160 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file Top_drc_routed.rpt -pb Top_drc_routed.pb -rpx Top_drc_routed.rpx
+Command: report_drc -file Top_drc_routed.rpt -pb Top_drc_routed.pb -rpx Top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file Top_methodology_drc_routed.rpt -pb Top_methodology_drc_routed.pb -rpx Top_methodology_drc_routed.rpx
+Command: report_methodology -file Top_methodology_drc_routed.rpt -pb Top_methodology_drc_routed.pb -rpx Top_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/123/Documents/xilinx_project/SiTCP/axi_10g_ethernet_0_ex/axi_10g_ethernet_0_ex.runs/impl_1/Top_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 2768.160 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
+Command: report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+559 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 2768.160 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_route_status -file Top_route_status.rpt -pb Top_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file Top_timing_summary_routed.rpt -pb Top_timing_summary_routed.pb -rpx Top_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file Top_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file Top_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file Top_bus_skew_routed.rpt -pb Top_bus_skew_routed.pb -rpx Top_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 22 16:14:56 2025...

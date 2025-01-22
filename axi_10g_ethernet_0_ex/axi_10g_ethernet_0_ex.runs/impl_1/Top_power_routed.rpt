@@ -1,0 +1,210 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date             : Wed Jan 22 19:02:16 2025
+| Host             : DESKTOP-4V0BJ5M running 64-bit major release  (build 9200)
+| Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
+| Design           : Top
+| Device           : xc7k325tffg900-2
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 2.529        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 2.344        |
+| Device Static (W)        | 0.185        |
+| Effective TJA (C/W)      | 1.8          |
+| Max Ambient (C)          | 80.5         |
+| Junction Temperature (C) | 29.5         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.109 |       36 |       --- |             --- |
+| Slice Logic              |     0.027 |    21906 |       --- |             --- |
+|   LUT as Logic           |     0.025 |     7587 |    203800 |            3.72 |
+|   Register               |     0.001 |    10756 |    407600 |            2.64 |
+|   CARRY4                 |    <0.001 |      417 |     50950 |            0.82 |
+|   LUT as Distributed RAM |    <0.001 |      172 |     64000 |            0.27 |
+|   F7/F8 Muxes            |    <0.001 |       36 |    203800 |            0.02 |
+|   LUT as Shift Register  |    <0.001 |      267 |     64000 |            0.42 |
+|   Others                 |     0.000 |      925 |       --- |             --- |
+| Signals                  |     0.026 |    16581 |       --- |             --- |
+| Block RAM                |     0.034 |       15 |       445 |            3.37 |
+| MMCM                     |     0.107 |        1 |        10 |           10.00 |
+| I/O                      |     0.159 |       48 |       500 |            9.60 |
+| GTX                      |     1.881 |        7 |        16 |           43.75 |
+| Static Power             |     0.185 |          |           |                 |
+| Total                    |     2.529 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.398 |       0.316 |      0.082 |
+| Vccaux    |       1.800 |     0.094 |       0.065 |      0.029 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.083 |       0.082 |      0.001 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.005 |       0.003 |      0.002 |
+| MGTAVcc   |       1.000 |     1.041 |       1.036 |      0.005 |
+| MGTAVtt   |       1.200 |     0.552 |       0.546 |      0.005 |
+| MGTVccaux |       1.800 |     0.038 |       0.038 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.8                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 3.3                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                                                                                               | Domain                                                                                                                                                          | Constraint (ns) |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| CLK_OnBoard_p                                                                                                                                                       | CLK_OnBoard_p                                                                                                                                                   |             5.0 |
+| Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/gtxe2_i/RXOUTCLK | Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/rxrecclk_out |             3.1 |
+| Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/gtxe2_i/TXOUTCLK | Ethernet_10G_inst/fifo_block_i/ethernet_core_i/inst/xpcs/inst/ten_gig_eth_pcs_pma_block_i/gt0_gtwizard_10gbaser_multi_gt_i/gt0_gtwizard_10gbaser_i/txoutclk     |             3.1 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt0_GTX_ROD_Link_i/gtxe2_i/RXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt0_GTX_ROD_Link_i/gt0_rxoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt0_GTX_ROD_Link_i/gtxe2_i/TXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt0_GTX_ROD_Link_i/gt0_txoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt1_GTX_ROD_Link_i/gtxe2_i/RXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt1_GTX_ROD_Link_i/gt1_rxoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt1_GTX_ROD_Link_i/gtxe2_i/TXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt1_GTX_ROD_Link_i/gt1_txoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt2_GTX_ROD_Link_i/gtxe2_i/RXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt2_GTX_ROD_Link_i/gt2_rxoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt2_GTX_ROD_Link_i/gtxe2_i/TXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt2_GTX_ROD_Link_i/gt2_txoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt3_GTX_ROD_Link_i/gtxe2_i/RXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt3_GTX_ROD_Link_i/gt3_rxoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt3_GTX_ROD_Link_i/gtxe2_i/TXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt3_GTX_ROD_Link_i/gt3_txoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt4_GTX_ROD_Link_i/gtxe2_i/RXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt4_GTX_ROD_Link_i/gt4_rxoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt4_GTX_ROD_Link_i/gtxe2_i/TXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt4_GTX_ROD_Link_i/gt4_txoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt5_GTX_ROD_Link_i/gtxe2_i/RXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt5_GTX_ROD_Link_i/gt5_rxoutclk_out                                        |            12.5 |
+| GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt5_GTX_ROD_Link_i/gtxe2_i/TXOUTCLK                                            | GTX_ROD_Datalink_inst/GTX_ROD_Link_support_i/GTX_ROD_Link_init_i/inst/GTX_ROD_Link_i/gt5_GTX_ROD_Link_i/gt5_txoutclk_out                                        |            12.5 |
+| Q2_CLK0_GTREFCLK_PAD_P_IN                                                                                                                                           | Q2_CLK0_GTREFCLK_PAD_P_IN                                                                                                                                       |             5.0 |
+| clk_out1_clk_wiz_0                                                                                                                                                  | clock_generator_inst/inst/clk_out1_clk_wiz_0                                                                                                                    |            25.0 |
+| clk_out2_clk_wiz_0                                                                                                                                                  | clock_generator_inst/inst/clk_out2_clk_wiz_0                                                                                                                    |            10.0 |
+| clk_out4_clk_wiz_0                                                                                                                                                  | clock_generator_inst/inst/clk_out4_clk_wiz_0                                                                                                                    |             8.0 |
+| clkfbout_clk_wiz_0                                                                                                                                                  | clock_generator_inst/inst/clkfbout_clk_wiz_0                                                                                                                    |             5.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                                                                          | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs                                                                                            |            33.0 |
+| ethernet_refclk_in_p                                                                                                                                                | ethernet_refclk_in_p                                                                                                                                            |             6.4 |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------------------------+-----------+
+| Name                       | Power (W) |
++----------------------------+-----------+
+| Top                        |     2.344 |
+|   Ethernet_10G_inst        |     0.525 |
+|     arp_block              |     0.004 |
+|       arp_parse            |     0.004 |
+|     fifo_block_i           |     0.520 |
+|       ethernet_core_i      |     0.486 |
+|       ethernet_mac_fifo_i  |     0.034 |
+|   GTX_ROD_Datalink_inst    |     1.514 |
+|     GTX_ROD_Link_support_i |     1.514 |
+|       GTX_ROD_Link_init_i  |     1.512 |
+|       gt_usrclk_source     |     0.001 |
+|   OBUFDS_FEB1_clk          |     0.010 |
+|   OBUFDS_FEB2_clk          |     0.010 |
+|   OBUFDS_FEB3_clk          |     0.010 |
+|   OBUFDS_FEB4_clk          |     0.010 |
+|   OBUFDS_FEB5_clk          |     0.010 |
+|   OBUFDS_FEB6_clk          |     0.010 |
+|   OBUFDS_ROD_Command_FEB1  |     0.008 |
+|   OBUFDS_ROD_Command_FEB2  |     0.008 |
+|   OBUFDS_ROD_Command_FEB3  |     0.008 |
+|   OBUFDS_ROD_Command_FEB4  |     0.008 |
+|   OBUFDS_ROD_Command_FEB5  |     0.008 |
+|   OBUFDS_ROD_Command_FEB6  |     0.008 |
+|   OBUFDS_Trigger_FEB1      |     0.008 |
+|   OBUFDS_Trigger_FEB2      |     0.008 |
+|   OBUFDS_Trigger_FEB3      |     0.008 |
+|   OBUFDS_Trigger_FEB4      |     0.008 |
+|   OBUFDS_Trigger_FEB5      |     0.008 |
+|   OBUFDS_Trigger_FEB6      |     0.008 |
+|   clock_generator_inst     |     0.112 |
+|     inst                   |     0.112 |
+|   dbg_hub                  |     0.004 |
+|     inst                   |     0.004 |
+|       BSCANID.u_xsdbm_id   |     0.004 |
+|   u_ila_0                  |     0.032 |
+|     inst                   |     0.032 |
+|       ila_core_inst        |     0.032 |
++----------------------------+-----------+
+
+

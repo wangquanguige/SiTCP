@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2025 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -80,10 +80,9 @@ COMPONENT axi_10g_ethernet_0
     coreclk_out : OUT STD_LOGIC;
     resetdone_out : OUT STD_LOGIC;
     reset_counter_done_out : OUT STD_LOGIC;
-    qpll0lock_out : OUT STD_LOGIC;
-    qpll0outclk_out : OUT STD_LOGIC;
-    qpll0outrefclk_out : OUT STD_LOGIC;
-    areset_coreclk_out : OUT STD_LOGIC;
+    qplllock_out : OUT STD_LOGIC;
+    qplloutclk_out : OUT STD_LOGIC;
+    qplloutrefclk_out : OUT STD_LOGIC;
     refclk_p : IN STD_LOGIC;
     refclk_n : IN STD_LOGIC;
     reset : IN STD_LOGIC;
@@ -156,10 +155,9 @@ your_instance_name : axi_10g_ethernet_0
     coreclk_out => coreclk_out,
     resetdone_out => resetdone_out,
     reset_counter_done_out => reset_counter_done_out,
-    qpll0lock_out => qpll0lock_out,
-    qpll0outclk_out => qpll0outclk_out,
-    qpll0outrefclk_out => qpll0outrefclk_out,
-    areset_coreclk_out => areset_coreclk_out,
+    qplllock_out => qplllock_out,
+    qplloutclk_out => qplloutclk_out,
+    qplloutrefclk_out => qplloutrefclk_out,
     refclk_p => refclk_p,
     refclk_n => refclk_n,
     reset => reset,

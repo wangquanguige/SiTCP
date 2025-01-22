@@ -49,7 +49,7 @@
 // Title      : Example Design top level
 // Project    : 10G Gigabit Ethernet
 //-----------------------------------------------------------------------------
-// File       : axi_10g_ethernet_0_example_design.v
+// File       : Ethernet_10G_example_design.v
 // Author     : Xilinx Inc.
 //-----------------------------------------------------------------------------
 // Description: This is the example design top level code for the 10G
@@ -63,29 +63,30 @@
 module axi_10g_ethernet_0_example_design
   (
    // Clock inputs
-   input             clk_in_p,       // Freerunning clock source
-   input             clk_in_n,
-   input             refclk_p,       // Transceiver reference clock source
-   input             refclk_n,
-   output            coreclk_out,
-
-   // Example design control inputs
-   input             pcs_loopback,
+   input            s_axi_aclk,       // axi clock source
+   input            refclk_p,         // Transceiver reference clock source
+   input            refclk_n,
+   
+   // User interface
+   output           userclk_out,
+   
+   output           tx_axis_tready,
+   input    [63:0]  tx_axis_tdata,
+   input    [7:0]   tx_axis_tkeep,
+   input            tx_axis_tlast,
+   input            tx_axis_tvalid,
+   
+   output   [63:0]  rx_axis_tdata,
+   output   [7:0]   rx_axis_tkeep,
+   output           rx_axis_tvalid,
+   output           rx_axis_tlast,
+   input            rx_axis_tready,
+   
+   // Control inputs
    input             reset,
-   input             reset_error,
-   input             insert_error,
-   input             enable_pat_gen,
-   input             enable_pat_check,
-   output            serialized_stats,
-   input             sim_speedup_control,
-   input             enable_custom_preamble,
 
-   // Example design status outputs
-   output            frame_error,
-   output            gen_active_flash,
-   output            check_active_flash,
+   // status outputs
    output            core_ready,
-   output            qplllock_out,
 
    // Serial I/O from/to transceiver
    output            txp,
@@ -95,21 +96,15 @@ module axi_10g_ethernet_0_example_design
    );
 /*-------------------------------------------------------------------------*/
 
-
    // Set FIFO memory size
    localparam        FIFO_SIZE  = 1024;
 
-
    // Signal declarations
-   wire              enable_vlan;
-   wire              reset_error_sync;
-
    wire              coreclk;
    wire              block_lock;
    wire              rxrecclk;
-   wire              s_axi_aclk;
+   wire             qplllock_out;
 
-   wire              tx_dcm_locked;
    wire              tx_s_axis_aresetn;
    wire              tx_s_axis_areset;
 
@@ -133,9 +128,6 @@ module axi_10g_ethernet_0_example_design
    wire              s_axi_rvalid;
    wire              s_axi_rready;
 
-   wire              enable_gen_after_config;
-   wire              enable_gen_synced;
-
    wire              tx_statistics_vector;
    wire              rx_statistics_vector;
    wire     [25:0]   tx_statistics_vector_int;
@@ -147,89 +139,38 @@ module axi_10g_ethernet_0_example_design
    reg               rx_statistics_valid;
    reg      [31:0]   rx_statistics_shift = 0;
 
-   wire     [63:0]   tcp_tx_axis_tdata;
-   wire     [7:0]    tcp_tx_axis_tkeep;
-   wire              tcp_tx_axis_tvalid;
-   wire              tcp_tx_axis_tlast;
-
-   wire     [63:0]   tx_axis_tdata;
-   wire     [7:0]    tx_axis_tkeep;
-   wire              tx_axis_tvalid;
-   wire              tx_axis_tlast;
-   wire              tx_axis_tready;
-   wire     [63:0]   rx_axis_tdata;
-   wire     [7:0]    rx_axis_tkeep;
-   wire              rx_axis_tvalid;
-   wire              rx_axis_tlast;
-   wire              rx_axis_tready;
+//   wire     [63:0]   tx_axis_tdata;
+//   wire     [7:0]    tx_axis_tkeep;
+//   wire              tx_axis_tvalid;
+//   wire              tx_axis_tlast;
+//   wire              tx_axis_tready;
+//   wire     [63:0]   rx_axis_tdata;
+//   wire     [7:0]    rx_axis_tkeep;
+//   wire              rx_axis_tvalid;
+//   wire              rx_axis_tlast;
+//   wire              rx_axis_tready;
    wire              tx_reset;
    wire              rx_reset;
 
    wire              tx_axis_aresetn;
    wire              rx_axis_aresetn;
 
-   wire              pat_gen_start;
-
    wire              resetdone_out;
    wire      [7:0]   pcspma_status;
 
-   wire              pcs_loopback_sync;
-   wire              enable_custom_preamble_sync;
-   wire              enable_custom_preamble_coreclk_sync;
-   wire              insert_error_sync;
-
-   wire              areset;
-   wire              tx_arp;
-   wire      [31:0]  tx_arp_ip;
-
-
-   assign coreclk_out = coreclk;
-
-   // Enable or disable VLAN mode
-   assign enable_vlan = 0;
-
-   // Synchronise example design inputs into the applicable clock domain
-   axi_10g_ethernet_0_sync_block sync_insert_error (
-      .data_in                         (insert_error),
-      .clk                             (coreclk),
-      .data_out                        (insert_error_sync)
-   );
-
-   axi_10g_ethernet_0_sync_block sync_coreclk_enable_custom_preamble (
-      .data_in                         (enable_custom_preamble),
-      .clk                             (coreclk),
-      .data_out                        (enable_custom_preamble_coreclk_sync)
-   );
-
-
-   axi_10g_ethernet_0_sync_block sync_pcs_loopback (
-      .data_in                         (pcs_loopback),
-      .clk                             (s_axi_aclk),
-      .data_out                        (pcs_loopback_sync)
-   );
-
-   axi_10g_ethernet_0_sync_block sync_enable_custom_preamble (
-      .data_in                         (enable_custom_preamble),
-      .clk                             (s_axi_aclk),
-      .data_out                        (enable_custom_preamble_sync)
-   );
-
-   assign  core_ready         = block_lock;
+   assign   userclk_out = coreclk;
+   assign   core_ready  = block_lock;
 
    // Combine reset sources
-   assign  tx_axis_aresetn    = ~reset & tx_dcm_locked;
-   assign  rx_axis_aresetn    = ~reset & tx_dcm_locked;
-   assign  tx_s_axis_aresetn  = ~reset & tx_dcm_locked;
-
-   assign pat_gen_start = enable_pat_gen ? enable_gen_synced : 0;
+   assign  tx_axis_aresetn    = ~reset;     //mdz
+   assign  rx_axis_aresetn    = ~reset;     //mdz
+   assign  tx_s_axis_aresetn  = ~reset;     //mdz
 
    // The serialized statistics vector output is intended to only prevent logic stripping
    assign serialized_stats = tx_statistics_vector || rx_statistics_vector;
 
    assign tx_reset  = reset;
    assign rx_reset  = reset;
-
-
 
     //--------------------------------------------------------------------------
     // Instantiate a module containing the Ethernet core and an example FIFO
@@ -298,25 +239,11 @@ module axi_10g_ethernet_0_example_design
 
       .signal_detect                   (1'b1),
       .tx_fault                        (1'b0),
-      .sim_speedup_control             (sim_speedup_control),
+      .sim_speedup_control             (~reset),            //mdz
       .pcspma_status                   (pcspma_status),
       .resetdone_out                   (resetdone_out),
       .qplllock_out                    (qplllock_out)
       );
-
-
-    //--------------------------------------------------------------------------
-    // Instantiate the AXI-LITE/DRPCLK Clock source module
-    //--------------------------------------------------------------------------
-
-    axi_10g_ethernet_0_clocking axi_lite_clocking_i (
-      .clk_in_p                        (clk_in_p),
-      .clk_in_n                        (clk_in_n),
-      .s_axi_aclk                      (s_axi_aclk),
-      .tx_mmcm_reset                   (tx_reset),
-      .tx_mmcm_locked                  (tx_dcm_locked)
-    );
-
 
     //--------------------------------------------------------------------------
     // Instantiate the AXI-LITE Controller
@@ -326,12 +253,12 @@ module axi_10g_ethernet_0_example_design
       .s_axi_aclk                      (s_axi_aclk),
       .s_axi_reset                     (tx_s_axis_areset),
 
-      .pcs_loopback                    (pcs_loopback_sync),
-      .enable_vlan                     (enable_vlan),
-      .enable_custom_preamble          (enable_custom_preamble_sync),
+      .pcs_loopback                    (1'b0),          //mdz    
+      .enable_vlan                     (1'b0),          //mdz    
+      .enable_custom_preamble          (1'b0),          //mdz    
 
       .block_lock                      (block_lock),
-      .enable_gen                      (enable_gen_after_config),
+      .enable_gen                      (),              //mdz    
 
       .s_axi_awaddr                    (s_axi_awaddr),
       .s_axi_awvalid                   (s_axi_awvalid),
@@ -365,183 +292,10 @@ module axi_10g_ethernet_0_example_design
       .reset_out                       (tx_s_axis_areset)
       );
 
-    axi_10g_ethernet_0_sync_block gen_enable_sync (
-      .clk                             (coreclk),
-      .data_in                         (enable_gen_after_config),
-      .data_out                        (enable_gen_synced)
-      );
-
-    axi_10g_ethernet_0_sync_block reset_error_sync_reg (
-      .clk                             (coreclk),
-      .data_in                         (reset_error),
-      .data_out                        (reset_error_sync)
-      );
-
     //--------------------------------------------------------------------------
     // Instantiate the pattern generator / pattern checker and loopback module
     //--------------------------------------------------------------------------
-
-    /*axi_10g_ethernet_0_gen_check_wrapper pattern_generator (
-      .dest_addr                       (48'hda0102030405),
-      .src_addr                        (48'h5a0102030405),
-      .max_size                        (15'd300),
-      .min_size                        (15'd066),
-      .enable_vlan                     (enable_vlan),
-      .vlan_id                         (12'h002),
-      .vlan_priority                   (3'b010),
-      .preamble_data                   (56'hD55555567555FB),
-      .enable_custom_preamble          (enable_custom_preamble_coreclk_sync),
-
-      .aclk                            (coreclk),
-
-      .aresetn                         (tx_axis_aresetn),
-      .enable_pat_gen                  (pat_gen_start),
-      .reset_error                     (reset_error_sync),
-      .insert_error                    (insert_error_sync),
-      .enable_pat_check                (enable_pat_check),
-      .enable_loopback                 (!pat_gen_start),
-      .frame_error                     (frame_error),
-      .gen_active_flash                (gen_active_flash),
-      .check_active_flash              (check_active_flash),
-
-      .tx_axis_tdata                   (tx_axis_tdata),
-      .tx_axis_tkeep                   (tx_axis_tkeep),
-      .tx_axis_tvalid                  (tx_axis_tvalid),
-      .tx_axis_tlast                   (tx_axis_tlast),
-      .tx_axis_tready                  (tx_axis_tready),
-      .rx_axis_tdata                   (rx_axis_tdata),
-      .rx_axis_tkeep                   (rx_axis_tkeep),
-      .rx_axis_tvalid                  (rx_axis_tvalid),
-      .rx_axis_tlast                   (rx_axis_tlast),
-      .rx_axis_tready                  (rx_axis_tready)
-   );*/
-
-   axi_10g_ethernet_0_deliver deliver (
-      .aclk                            (coreclk),
-      .areset                          (areset),
-
-      .rx_axis_tdata                   (rx_axis_tdata),
-      .rx_axis_tkeep                   (rx_axis_tkeep),
-      .rx_axis_tvalid                  (rx_axis_tvalid),
-      .rx_axis_tlast                   (rx_axis_tlast),
-      .rx_axis_tready                  (rx_axis_tready),
-
-      .rx_axis_tdata                   (arp_rx_axis_tdata),
-      .rx_axis_tkeep                   (arp_rx_axis_tkeep),
-      .rx_axis_tvalid                  (arp_rx_axis_tvalid),
-      .rx_axis_tlast                   (arp_rx_axis_tlast),
-      .rx_axis_tready                  (arp_rx_axis_tready),
-
-      .rx_axis_tdata                   (icmp_rx_axis_tdata),
-      .rx_axis_tkeep                   (icmp_rx_axis_tkeep),
-      .rx_axis_tvalid                  (icmp_rx_axis_tvalid),
-      .rx_axis_tlast                   (icmp_rx_axis_tlast),
-      .rx_axis_tready                  (icmp_rx_axis_tready),
-
-      .rx_axis_tdata                   (tcp_rx_axis_tdata),
-      .rx_axis_tkeep                   (tcp_rx_axis_tkeep),
-      .rx_axis_tvalid                  (tcp_rx_axis_tvalid),
-      .rx_axis_tlast                   (tcp_rx_axis_tlast),
-      .rx_axis_tready                  (tcp_rx_axis_tready)
-   );
-
-   axi_10g_ethernet_0_arp_block arp_block (
-      .dest_addr                       (48'hda0102030405),
-      .src_addr                        (48'h5a0102030405),
-
-      .aclk                            (coreclk),
-      .areset                          (areset),
-
-      .tx_axis_tdata                   (tx_axis_tdata),
-      .tx_axis_tkeep                   (tx_axis_tkeep),
-      .tx_axis_tvalid                  (tx_axis_tvalid),
-      .tx_axis_tlast                   (tx_axis_tlast),
-      .tx_axis_tready                  (tx_axis_tready),
-
-      .rx_axis_tdata                   (rx_axis_tdata),
-      .rx_axis_tkeep                   (rx_axis_tkeep),
-      .rx_axis_tvalid                  (rx_axis_tvalid),
-      .rx_axis_tlast                   (rx_axis_tlast),
-      .rx_axis_tready                  (rx_axis_tready)
-   );
-
-   axi_10g_ethernet_0_ip_block ip_block (
-      .dest_addr                       (48'hda0102030405),
-      .src_addr                        (48'h5a0102030405),
-
-      .aclk                            (coreclk),
-      .areset                          (areset),
-
-      .tx_axis_tdata                   (tx_axis_tdata),
-      .tx_axis_tkeep                   (tx_axis_tkeep),
-      .tx_axis_tvalid                  (tx_axis_tvalid),
-      .tx_axis_tlast                   (tx_axis_tlast),
-      .tx_axis_tready                  (tx_axis_tready),
-
-      .rx_axis_tdata                   (rx_axis_tdata),
-      .rx_axis_tkeep                   (rx_axis_tkeep),
-      .rx_axis_tvalid                  (rx_axis_tvalid),
-      .rx_axis_tlast                   (rx_axis_tlast),
-      .rx_axis_tready                  (rx_axis_tready),
-
-      .tx_arp                          (tx_arp),
-      .tx_arp_ip                       (tx_arp_ip),
-
-      // TCP TX
-      .tcp_tx_axis_tready              (tcp_tx_axis_tready),
-      .tcp_tx_axis_tdata               (tcp_tx_axis_tdata),
-      .tcp_tx_axis_tkeep               (tcp_tx_axis_tkeep),
-      .tcp_tx_axis_tvalid              (tcp_tx_axis_tvalid),
-      .tcp_tx_axis_tlast               (tcp_tx_axis_tlast)
-   );
-
-   axi_10g_ethernet_0_tcp_block tcp_block (
-      .dest_addr                       (48'hda0102030405),
-      .src_addr                        (48'h5a0102030405),
-      .max_size                        (15'd300),
-      .min_size                        (15'd066),
-      .enable_vlan                     (enable_vlan),
-      .vlan_id                         (12'h002),
-      .vlan_priority                   (3'b010),
-      .preamble_data                   (56'hD55555567555FB),
-      .enable_custom_preamble          (enable_custom_preamble_coreclk_sync),
-
-      .aclk                            (coreclk),
-
-      .aresetn                         (tx_axis_aresetn),
-      .enable_pat_gen                  (pat_gen_start),
-      .reset_error                     (reset_error_sync),
-      .insert_error                    (insert_error_sync),
-      .enable_pat_check                (enable_pat_check),
-      .enable_loopback                 (!pat_gen_start),
-      .frame_error                     (frame_error),
-      .gen_active_flash                (gen_active_flash),
-      .check_active_flash              (check_active_flash),
-
-      .tcp_tx_axis_tdata               (tcp_tx_axis_tdata),
-      .tcp_tx_axis_tkeep               (tcp_tx_axis_tkeep),
-      .tcp_tx_axis_tvalid              (tcp_tx_axis_tvalid),
-      .tcp_tx_axis_tlast               (tcp_tx_axis_tlast),
-      .tcp_tx_axis_tready              (tcp_tx_axis_tready),
-
-      .rx_axis_tdata                   (rx_axis_tdata),
-      .rx_axis_tkeep                   (rx_axis_tkeep),
-      .rx_axis_tvalid                  (rx_axis_tvalid),
-      .rx_axis_tlast                   (rx_axis_tlast),
-      .rx_axis_tready                  (rx_axis_tready),
-
-      // TCP TX SIGNAL
-      .tcp_tx_en                       (tcp_tx_en)
-   );
-
-   axi_10g_ethernet_0_sync_reset areset_gen (
-      .clk                             (coreclk),
-      .reset_in                        (~tx_axis_aresetn),
-      .reset_out                       (areset)
-   );
-
-
-
+     
 
    //--------------------------------------------------------------------------
    // serialise the stats vector output to ensure logic isn't stripped during
@@ -572,6 +326,6 @@ module axi_10g_ethernet_0_example_design
    end
 
    assign rx_statistics_vector         = rx_statistics_shift[31];
-
+    
 
 endmodule

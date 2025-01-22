@@ -101,9 +101,7 @@ module axi_10g_ethernet_0_axi_lite_sm (
   // Main state machine
   localparam  STARTUP                   = 0,
               RESET_MAC_TX              = 1,
-              RESET_MAC_RX_0            = 16,
-              FLOW_CONTROL              = 17,
-              RESET_MAC_RX_1            = 2,
+              RESET_MAC_RX              = 2,
               MDIO_ADDR                 = 3,
               MDIO_RD                   = 4,
               MDIO_RD_1                 = 5,
@@ -132,15 +130,11 @@ module axi_10g_ethernet_0_axi_lite_sm (
     // Management configuration register address     (0x500)
   localparam CONFIG_MANAGEMENT_ADDR  = 17'h500;
 
-  // Receiver configuration register address       (0x400 0x404)
-  localparam RECEIVER_ADDR_0           = 17'h400;
-  localparam RECEIVER_ADDR_1           = 17'h404;
+  // Receiver configuration register address       (0x404)
+  localparam RECEIVER_ADDR           = 17'h404;
 
   // Transmitter configuration register address    (0x408)
   localparam TRANSMITTER_ADDR        = 17'h408;
-
-  // Flow Control Configuration register address   (0x40C)
-  localparam FLOW_CONTROL_ADDR        = 17'h40C;
 
   // MDIO registers
   localparam MDIO_CONTROL           = 17'h504;
@@ -214,8 +208,6 @@ module axi_10g_ethernet_0_axi_lite_sm (
   reg mdio_reg_addr_txn = 1'b0;
   reg mdio_reg_32_addr_txn = 1'b0;
   reg check_now=1'b0;
-
-  reg [47:0] pause_addr = 48'h060504030201;
 
     always@* begin
       if(s_axi_awaddr == 32'h504 && s_axi_awready && s_axi_awvalid) begin
@@ -360,36 +352,20 @@ module axi_10g_ethernet_0_axi_lite_sm (
               writenread     <= 1;
               addr           <= CONFIG_MANAGEMENT_ADDR;
               axi_wr_data    <= 32'h45;
-              axi_state      <= RESET_MAC_RX_1;
+              axi_state      <= RESET_MAC_RX;
            end
-           RESET_MAC_RX_0 : begin
-              $display("** Note: Writing MAC ADDRESS");
-              start_access   <= 1;
-              writenread     <= 1;
-              addr           <= RECEIVER_ADDR_0;
-              axi_wr_data <= pause_addr[31:0];
-              axi_state      <= FLOW_CONTROL;
-           end
-           FLOW_CONTROL : begin
-              $display("** Note: Flow Control");
-              start_access   <= 1;
-              writenread     <= 1;
-              addr           <= FLOW_CONTROL_ADDR;
-              axi_wr_data <= 32'hE0000000;
-              axi_state      <= RESET_MAC_TX;
-           end
-           RESET_MAC_RX_1 : begin
+           RESET_MAC_RX : begin
               $display("** Note: Reseting MAC RX");
               start_access   <= 1;
               writenread     <= 1;
-              addr           <= RECEIVER_ADDR_1;
+              addr           <= RECEIVER_ADDR;
             case (config_mode)
-               2'b00 : axi_wr_data <= {16'h9000, pause_addr[47:32]};
-               2'b01 : axi_wr_data <= {16'h9400, pause_addr[47:32]};
-               2'b10 : axi_wr_data <= {16'h9800, pause_addr[47:32]};
-               2'b11 : axi_wr_data <= {16'h9C00, pause_addr[47:32]};
+               2'b00 : axi_wr_data <= 32'h90000000;
+               2'b01 : axi_wr_data <= 32'h94000000;
+               2'b10 : axi_wr_data <= 32'h98000000;
+               2'b11 : axi_wr_data <= 32'h9C000000;
             endcase
-              axi_state      <= RESET_MAC_RX_0;
+              axi_state      <= RESET_MAC_TX;
            end
            // this state will drive the reset to the example design (apart from this block)
            // this will be separately captured and synched into the various clock domains
@@ -826,7 +802,6 @@ module axi_10g_ethernet_0_axi_lite_sm (
         s_axi_wvalid     <= 0;
         axi_status[3]     <= 0;
      end
-     $monitor("s_axi_wdata = %h, s_axi_awaddr = %h", s_axi_wdata, s_axi_awaddr);
   end
 
   // WRITE RESP

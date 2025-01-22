@@ -190,16 +190,16 @@ parameter TB_MODE = "DEMO_TB";
     initial
     begin
 
-        frame0.data[0]  = 32'h33221100;  // <---
-        frame0.data[1]  = 32'h02025544;  //    |
+        frame0.data[0]  = 32'h44332211;  // <---
+        frame0.data[1]  = 32'h02026655;  //    |
         frame0.data[2]  = 32'h06050403;  //    |  This part of the frame is looped
         frame0.data[3]  = 32'h01000608;  //    |  if FRAME_GEN_MULTIPLIER is set to
         frame0.data[4]  = 32'h04060008;  //    |  more than 1
         frame0.data[5]  = 32'h02020100;  //    |
         frame0.data[6]  = 32'h06050403;  //    |
         frame0.data[7]  = 32'h55AA55AA;  //    |
-        frame0.data[8]  = 32'h33221100;  //    |
-        frame0.data[9]  = 32'hA8C05544;  //    |
+        frame0.data[8]  = 32'h44332211;  //    |
+        frame0.data[9]  = 32'hA8C06655;  //    |
         frame0.data[10] = 32'hAA550A01;  //    |
         frame0.data[11] = 32'h55AA55AA;  //    |
         frame0.data[12] = 32'hAA55AA55;  //    |
@@ -258,8 +258,8 @@ parameter TB_MODE = "DEMO_TB";
         frame0.error = 1'b0;
 
         //Frame 1
-        frame1.data[0]  = 32'h04030201;  // <---
-        frame1.data[1]  = 32'h02020605;  //    |
+        frame1.data[0]  = 32'h44332211;  // <---
+        frame1.data[1]  = 32'h02026655;  //    |
         frame1.data[2]  = 32'h06050403;  //    |  This part of the frame is looped
         frame1.data[3]  = 32'h00450008;  //    |  if FRAME_GEN_MULTIPLIER is set to
         frame1.data[4]  = 32'h17133C00;  //    |  more than 1
@@ -574,6 +574,8 @@ parameter TB_MODE = "DEMO_TB";
 
   // To aid the TX data checking code
   reg in_a_frame = 0;
+
+  reg txp_en = 0;
 
 
   // select between loopback or local data

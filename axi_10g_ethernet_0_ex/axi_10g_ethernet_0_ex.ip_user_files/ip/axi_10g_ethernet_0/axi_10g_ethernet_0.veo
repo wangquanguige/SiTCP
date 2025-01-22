@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2025 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -81,10 +81,9 @@ axi_10g_ethernet_0 your_instance_name (
   .coreclk_out(coreclk_out),                        // output wire coreclk_out
   .resetdone_out(resetdone_out),                    // output wire resetdone_out
   .reset_counter_done_out(reset_counter_done_out),  // output wire reset_counter_done_out
-  .qpll0lock_out(qpll0lock_out),                    // output wire qpll0lock_out
-  .qpll0outclk_out(qpll0outclk_out),                // output wire qpll0outclk_out
-  .qpll0outrefclk_out(qpll0outrefclk_out),          // output wire qpll0outrefclk_out
-  .areset_coreclk_out(areset_coreclk_out),          // output wire areset_coreclk_out
+  .qplllock_out(qplllock_out),                      // output wire qplllock_out
+  .qplloutclk_out(qplloutclk_out),                  // output wire qplloutclk_out
+  .qplloutrefclk_out(qplloutrefclk_out),            // output wire qplloutrefclk_out
   .refclk_p(refclk_p),                              // input wire refclk_p
   .refclk_n(refclk_n),                              // input wire refclk_n
   .reset(reset),                                    // input wire reset

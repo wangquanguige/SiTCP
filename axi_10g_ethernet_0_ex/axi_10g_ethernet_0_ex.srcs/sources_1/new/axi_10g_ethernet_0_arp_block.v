@@ -20,10 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module axi_10g_ethernet_0_arp_block(
-   input wire  [47:0]                  dest_addr                ,
-   input wire  [47:0]                  src_addr                 ,
-
+module axi_10g_ethernet_0_arp_block #(
+    // 配置参数，show_output_block显示输出数据属于哪个模块，show_message_type显示接收报文类型
+    parameter  show_output_block            =           1           ,
+    parameter  show_message_type            =           1           
+)
+(
    input wire                          aclk                     ,
    input wire                          areset                   ,
 
@@ -41,18 +43,22 @@ module axi_10g_ethernet_0_arp_block(
    output                              tx_axis_tlast            ,
    input                               tx_axis_tready           ,
 
+   // 上层传递数据时，先匹配ip地址是否有mac映射
    input       [31:0]                  arp_request_ip           ,
    input                               tx_tcp_en                ,
-   output                              tc_tcp_tready
+   output                              tx_tcp_tready            
 );
 
 wire                            arp_reply_tready        ;
-wire                            arp_reply_en            ;
+wire                            tx_arp_en               ;
 wire                            arp_rx_type             ;
 wire            [47:0]          arp_src_mac             ;
 wire            [31:0]          arp_src_ip              ;
 
-axi_10g_ethernet_0_arp_parser (
+axi_10g_ethernet_0_arp_parser #(
+    .show_message_type               (show_message_type)
+)
+arp_parse (
     .aclk                            (aclk)                     ,
     .areset                          (areset)                   ,
 
@@ -62,17 +68,20 @@ axi_10g_ethernet_0_arp_parser (
     .rx_axis_tlast                   (rx_axis_tlast)            ,
     .rx_axis_tready                  (rx_axis_tready)           ,
 
-    .arp_reply_en                    (arp_reply_en)             ,
+    .tx_arp_en                       (tx_arp_en)                ,
     .arp_rx_type                     (arp_rx_type)              ,
     .arp_src_mac                     (arp_src_mac)              ,
-    .arp_src_ip                      (arp_src_ip)
+    .arp_src_ip                      (arp_src_ip)               
 );
 
-axi_10g_ethernet_0_arp_generator (
+axi_10g_ethernet_0_arp_generator #(
+    .show_output_block               (show_output_block)     
+)
+arp_generator (
     .aclk                            (aclk)                     ,
     .areset                          (areset)                   ,
 
-    .arp_reply_en                    (arp_reply_en)             ,
+    .tx_arp_en                       (tx_arp_en)                ,
     .arp_rx_type                     (arp_rx_type)              ,
     .arp_src_mac                     (arp_src_mac)              ,
     .arp_src_ip                      (arp_src_ip)               ,
@@ -85,7 +94,9 @@ axi_10g_ethernet_0_arp_generator (
 
     .arp_request_ip                  (arp_request_ip)           ,       // tcp层发送报文的ip
     .tx_tcp_en                       (tx_tcp_en)                ,       // tcp发送报文使能信号
-    .tx_tcp_tready                   (tx_tcp_tready)                    // tcp允许发送报文
+    .tx_tcp_tready                   (tx_tcp_tready)            ,       // tcp允许发送报文
+    .tx_tcp_done                     (tx_tcp_done)                      // tcp发送完成信号
+
 );
 
 endmodule
